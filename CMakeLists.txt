@@ -23,7 +23,7 @@ add_executable(spork
         src/main.cpp
         src/window.cpp
         src/world_canvas.cpp
-        src/status_bar.cpp
+        src/status_console.cpp
         )
 
 target_link_libraries(spork

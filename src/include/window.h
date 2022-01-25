@@ -6,7 +6,7 @@
 #include <QToolBar>
 #include <QVBoxLayout>
 #include "world_canvas.h"
-#include "status_bar.h"
+#include "status_console.h"
 
 class QPushButton;
 class Window : public QMainWindow
@@ -18,7 +18,7 @@ private:
     WorldCanvas *canvas;
     QDockWidget *right;
     QVBoxLayout *left;
-    StatusBar *status_bar;
+    StatusConsole *status_bar;
     QToolBar *tool_bar;
 };
 

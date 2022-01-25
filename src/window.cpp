@@ -2,13 +2,13 @@
 #include <QDockWidget>
 #include "window.h"
 #include "world_canvas.h"
-#include "status_bar.h"
+#include "status_console.h"
 
 Window::Window(QWidget *parent) : QMainWindow(parent) {
     resize(QDesktopWidget().availableGeometry(this).size() * 0.5);
 
     this->canvas = new WorldCanvas(this);
-    this->status_bar = new StatusBar("Status Bar", this);
+    this->status_bar = new StatusConsole("Status Bar", this);
     this->right = new QDockWidget("Right", this);
     this->setCorner(Qt::Corner::BottomRightCorner, Qt::DockWidgetArea::RightDockWidgetArea);
 
