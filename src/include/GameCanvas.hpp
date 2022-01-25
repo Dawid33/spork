@@ -4,9 +4,9 @@
 #include <QTextEdit>
 #include <QOpenGLWidget>
 
-class WorldCanvas : public QOpenGLWidget {
+class GameCanvas : public QOpenGLWidget {
 public:
-    explicit WorldCanvas(QWidget *parent = nullptr);
+    explicit GameCanvas(QWidget *parent = nullptr);
 protected:
     void initializeGL();
     void resizeGL(int width, int height);

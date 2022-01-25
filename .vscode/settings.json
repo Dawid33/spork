@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "qdesktopwidget": "cpp",
-        "qopenglwidget": "cpp"
-    },
-    "cmake.configureOnOpen": true
-}
