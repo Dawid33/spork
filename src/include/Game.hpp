@@ -7,7 +7,9 @@
 class Game : public QThread {
     Q_OBJECT
 public:
-    explicit Game(QWidget *parent = nullptr);
+    friend GameCanvas;
+
+    explicit Game(QWidget *parent);
     ~Game() override;
     GameCanvas* getCanvas();
     void stop();
@@ -17,6 +19,9 @@ private:
     bool isRunning = true;
     bool isPaused = false;
     GameCanvas *canvas;
+    QImage *yellow;
+
+    void load();
 signals:
 
 public slots:
