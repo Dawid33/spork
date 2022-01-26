@@ -2,6 +2,7 @@
 #define SPORK_GAMEWORLD_H
 
 #include <QThread>
+#include <QOpenGLTexture>
 #include "GameCanvas.hpp"
 
 class Game : public QThread {
@@ -19,7 +20,7 @@ private:
     bool isRunning = true;
     bool isPaused = false;
     GameCanvas *canvas;
-    QImage *yellow;
+    QOpenGLTexture *yellow;
 
     void load();
 signals:

@@ -9,7 +9,6 @@ Game::Game(QWidget *parent) : QThread(parent) {
 
 Game::~Game() {
     delete this->canvas;
-    delete this->yellow;
 }
 
 GameCanvas *Game::getCanvas() {
@@ -33,5 +32,4 @@ void Game::stop() {
 }
 
 void Game::load() {
-    this->yellow = new QImage("resources/yellow.png");
 }

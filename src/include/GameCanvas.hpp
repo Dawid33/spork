@@ -3,6 +3,7 @@
 
 #include <QTextEdit>
 #include <QOpenGLWidget>
+#include <QOpenGLTexture>
 
 class Game;
 class GameCanvas : public QOpenGLWidget {
@@ -14,6 +15,7 @@ protected:
     void paintGL();
 private:
     Game* game = nullptr;
+    QOpenGLTexture *yellow{};
 };
 
 
