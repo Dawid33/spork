@@ -6,7 +6,7 @@
 
 Application::Application(QWidget *parent) : QMainWindow(parent) {
     resize(600,600);
-    //resize(QDesktopWidget().availableGeometry(this).size() * 0.5);
+    resize(QDesktopWidget().availableGeometry(this).size() * 0.5);
 
     this->game = new Game(this);
     this->game->start();

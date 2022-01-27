@@ -24,9 +24,6 @@ add_executable(spork
         ${CPP_FILES}
         ${HPP_FILES})
 
-message("GLM include dirs : " ${GLM_INCLUDE_DIRS})
-message("GLM libraries : " ${GLM_LIBRARY_DIRS})
-
 target_include_directories(spork PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src/include" ${GLM_INCLUDE_DIRS})
 target_link_libraries(spork
         Qt5::Core
