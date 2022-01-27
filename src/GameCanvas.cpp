@@ -28,11 +28,15 @@ const char* vertexSource = R"glsl(
     out vec3 Color;
     out vec2 Texcoord;
 
+    uniform mat4 model;
+    uniform mat4 view;
+    uniform mat4 proj;
+
     void main()
     {
-    Texcoord = texcoord;
+        Texcoord = texcoord;
         Color = color;
-        gl_Position = vec4(position, 0.0, 1.0);
+        gl_Position =  proj * view * model * vec4(position, 0.0, 1.0);
     }
 )glsl";
 const char* fragmentSource = R"glsl(
@@ -52,71 +56,105 @@ const char* fragmentSource = R"glsl(
 )glsl";
 
 GameCanvas::GameCanvas(QWidget *parent, Game *game) : QOpenGLWidget(parent) {
+    time_start = std::chrono::high_resolution_clock::now();
     this->game = game;
 }
 
 void GameCanvas::initializeGL() {
-    QOpenGLFunctions *f = QOpenGLContext::currentContext()->functions();
+    QOpenGLFunctions f(QOpenGLContext::currentContext());
 
     yellow = new QOpenGLTexture(QImage("resources/yellow.png"));
     if (!yellow->isCreated()) {
         std::cout << "Failed to create texture." << std::endl;
     }
+    yellow->setMagnificationFilter(QOpenGLTexture::Filter::Nearest);
 
     GLuint vbo;
-    f->glGenBuffers(1, &vbo); // Generate 1 buffer
-    f->glBindBuffer(GL_ARRAY_BUFFER, vbo);
-    f->glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    f.glGenBuffers(1, &vbo); // Generate 1 buffer
+    f.glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    f.glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
 
-    GLuint vertexShader = f->glCreateShader(GL_VERTEX_SHADER);
+    GLuint vertexShader = f.glCreateShader(GL_VERTEX_SHADER);
 
-    f->glShaderSource(vertexShader, 1, &vertexSource, NULL);
-    f->glCompileShader(vertexShader);
+    f.glShaderSource(vertexShader, 1, &vertexSource, NULL);
+    f.glCompileShader(vertexShader);
 
-    GLuint fragmentShader = f->glCreateShader(GL_FRAGMENT_SHADER);
-    f->glShaderSource(fragmentShader, 1, &fragmentSource, NULL);
-    f->glCompileShader(fragmentShader);
+    GLuint fragmentShader = f.glCreateShader(GL_FRAGMENT_SHADER);
+    f.glShaderSource(fragmentShader, 1, &fragmentSource, NULL);
+    f.glCompileShader(fragmentShader);
 
-    GLuint shaderProgram = f->glCreateProgram();
-    f->glAttachShader(shaderProgram, vertexShader);
-    f->glAttachShader(shaderProgram, fragmentShader);
-    f->glLinkProgram(shaderProgram);
-    f->glUseProgram(shaderProgram);
+    GLuint shaderProgram = f.glCreateProgram();
+    f.glAttachShader(shaderProgram, vertexShader);
+    f.glAttachShader(shaderProgram, fragmentShader);
+    f.glLinkProgram(shaderProgram);
+    f.glUseProgram(shaderProgram);
 
-    GLint posAttrib = f->glGetAttribLocation(shaderProgram, "position");
-    f->glEnableVertexAttribArray(posAttrib);
-    f->glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE,
+    GLint posAttrib = f.glGetAttribLocation(shaderProgram, "position");
+    f.glEnableVertexAttribArray(posAttrib);
+    f.glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE,
                           7*sizeof(float), 0);
 
-    GLint colAttrib = f->glGetAttribLocation(shaderProgram, "color");
-    f->glEnableVertexAttribArray(colAttrib);
-    f->glVertexAttribPointer(colAttrib, 3, GL_FLOAT, GL_FALSE,
+    GLint colAttrib = f.glGetAttribLocation(shaderProgram, "color");
+    f.glEnableVertexAttribArray(colAttrib);
+    f.glVertexAttribPointer(colAttrib, 3, GL_FLOAT, GL_FALSE,
                           7*sizeof(float), (void*)(2*sizeof(float)));
 
-    GLint texAttrib = f->glGetAttribLocation(shaderProgram, "texcoord");
-    f->glEnableVertexAttribArray(texAttrib);
-    f->glVertexAttribPointer(texAttrib, 2, GL_FLOAT, GL_FALSE,
+    GLint texAttrib = f.glGetAttribLocation(shaderProgram, "texcoord");
+    f.glEnableVertexAttribArray(texAttrib);
+    f.glVertexAttribPointer(texAttrib, 2, GL_FLOAT, GL_FALSE,
                           7*sizeof(float), (void*)(5*sizeof(float)));
 
+    glm::mat4 trans = glm::mat4(1.0f);
+    trans = glm::rotate(trans, glm::radians(180.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+    uniModel = f.glGetUniformLocation(shaderProgram, "model");
+    f.glUniformMatrix4fv(uniModel, 1, GL_FALSE, glm::value_ptr(trans));
+
+    glm::mat4 view = glm::lookAt(
+            glm::vec3(1.2f, 1.2f, 1.2f),
+            glm::vec3(0.0f, 0.0f, 0.0f),
+            glm::vec3(0.0f, 0.0f, 1.0f)
+    );
+    GLint uniView = f.glGetUniformLocation(shaderProgram, "view");
+    f.glUniformMatrix4fv(uniView, 1, GL_FALSE, glm::value_ptr(view));
+
+    glm::mat4 proj = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 1.0f, 10.0f);
+    GLint uniProj = f.glGetUniformLocation(shaderProgram, "proj");
+    f.glUniformMatrix4fv(uniProj, 1, GL_FALSE, glm::value_ptr(proj));
+
+
     GLuint ebo;
-    f->glGenBuffers(1, &ebo);
-    f->glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
-    f->glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(elements), elements, GL_STATIC_DRAW);
+    f.glGenBuffers(1, &ebo);
+    f.glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+    f.glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(elements), elements, GL_STATIC_DRAW);
 
 //    GLuint vao;
-//    f->glGenVertexArrays(1, &vao);
-//    f->glBindVertexArray(vao);
+//    f.glGenVertexArrays(1, &vao);
+//    f.glBindVertexArray(vao);
 
 
 
 }
 
 void GameCanvas::paintGL() {
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
+    QOpenGLFunctions f(QOpenGLContext::currentContext());
+    f.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    f.glClear(GL_COLOR_BUFFER_BIT);
+
+    // Calculate transformation
+    auto t_now = std::chrono::high_resolution_clock::now();
+    float time = std::chrono::duration_cast<std::chrono::duration<float>>(t_now - time_start).count();
+
+    glm::mat4 trans = glm::mat4(1.0f);
+    trans = glm::rotate(
+            trans,
+            time * glm::radians(180.0f),
+            glm::vec3(0.0f, 0.0f, 1.0f)
+    );
+    f.glUniformMatrix4fv(uniModel, 1, GL_FALSE, glm::value_ptr(trans));
+
     yellow->bind();
-    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+    f.glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     yellow->release();
 }
 

@@ -6,7 +6,7 @@
 #include <QToolBar>
 #include <QVBoxLayout>
 #include "GameCanvas.hpp"
-#include "StatusConsole.hpp"
+#include "StatusConsoleDock.hpp"
 #include "Game.hpp"
 
 class QPushButton;
@@ -17,9 +17,10 @@ public:
     ~Application() override;
 private:
     Game *game;
+
     QDockWidget *right;
-    StatusConsole *status_bar;
     QToolBar *tool_bar;
+    StatusConsoleDock *console_dock;
 };
 
 #endif //SPORK_APPLICATION_HPP

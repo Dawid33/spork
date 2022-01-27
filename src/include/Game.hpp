@@ -17,16 +17,17 @@ public:
 protected:
     void run() override;
 private:
+    void update();
     bool isRunning = true;
+
     bool isPaused = false;
     GameCanvas *canvas;
     QOpenGLTexture *yellow;
-
-    void load();
+    QTimer *paint_timer;
+    bool shouldPaintCanvas = false;
 signals:
-
 public slots:
-
+    void paintCanvasAtNextUpdate();
 };
 
 

@@ -1,5 +1,5 @@
 #include "StatusConsole.hpp"
 
-StatusConsole::StatusConsole(const QString &title, QWidget *parent) : QDockWidget(parent) {
-    
+StatusConsole::StatusConsole(QWidget *parent) : QTextEdit(parent) {
+
 }

@@ -1,7 +1,7 @@
 #include <QDesktopWidget>
 #include <QDockWidget>
 #include "Application.hpp"
-#include "StatusConsole.hpp"
+#include "StatusConsoleDock.hpp"
 #include "Game.hpp"
 
 Application::Application(QWidget *parent) : QMainWindow(parent) {
@@ -10,11 +10,11 @@ Application::Application(QWidget *parent) : QMainWindow(parent) {
 
     this->game = new Game(this);
     this->game->start();
-    this->status_bar = new StatusConsole("Status Bar", this);
-    this->right = new QDockWidget("Right", this);
+    this->console_dock = new StatusConsoleDock("Status Bar", this);
+    this->right = new QDockWidget("Controls", this);
     this->setCorner(Qt::Corner::BottomRightCorner, Qt::DockWidgetArea::RightDockWidgetArea);
 
-    this->status_bar->setMinimumHeight(200);
+    this->console_dock->setMinimumHeight(200);
     this->right->setMinimumWidth(250);
 
     this->tool_bar = new QToolBar(this);
@@ -22,7 +22,7 @@ Application::Application(QWidget *parent) : QMainWindow(parent) {
     this->tool_bar->addAction("One");
     this->tool_bar->addAction("Two");
 
-    addDockWidget(Qt::DockWidgetArea::BottomDockWidgetArea, this->status_bar);
+    addDockWidget(Qt::DockWidgetArea::BottomDockWidgetArea, this->console_dock);
     addDockWidget(Qt::DockWidgetArea::RightDockWidgetArea, this->right);
     addToolBar(Qt::ToolBarArea::TopToolBarArea, this->tool_bar);
     

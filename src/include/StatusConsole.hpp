@@ -1,11 +1,12 @@
-#ifndef STATUS_BAR_H
-#define STATUS_BAR_H
+#ifndef SPORK_STATUSCONSOLE_H
+#define SPORK_STATUSCONSOLE_H
 
-#include <QDockWidget>
+#include <QTextEdit>
 
-class StatusConsole : public QDockWidget {
+class StatusConsole : public QTextEdit {
 public:
-    explicit StatusConsole(const QString &title, QWidget* parent = nullptr);
+    explicit StatusConsole(QWidget* parent = nullptr);
 };
 
-#endif // STATUS_BAR_H
+
+#endif //SPORK_STATUSCONSOLE_H

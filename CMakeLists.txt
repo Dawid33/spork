@@ -9,8 +9,8 @@ set(CMAKE_AUTOUIC ON)
 
 file(COPY ${CMAKE_SOURCE_DIR}/resources DESTINATION ${CMAKE_BINARY_DIR})
 
-find_package(OpenGL REQUIRED)
-find_package(GLUT REQUIRED)
+find_package(PkgConfig REQUIRED)
+pkg_search_module(GLM REQUIRED glm)
 find_package(Qt5 COMPONENTS
         Core
         Gui
@@ -24,12 +24,12 @@ add_executable(spork
         ${CPP_FILES}
         ${HPP_FILES})
 
-target_include_directories(spork PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src/include")
+message("GLM include dirs : " ${GLM_INCLUDE_DIRS})
+message("GLM libraries : " ${GLM_LIBRARY_DIRS})
+
+target_include_directories(spork PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src/include" ${GLM_INCLUDE_DIRS})
 target_link_libraries(spork
         Qt5::Core
         Qt5::Gui
         Qt5::Widgets
-        OpenGL::GL 
-        OpenGL::GLU
-        GLUT::GLUT
-        )
+        ${GLM_LIBRARY_DIRS})
