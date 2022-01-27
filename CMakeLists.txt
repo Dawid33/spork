@@ -15,7 +15,7 @@ find_package(Qt5 COMPONENTS
         Core
         Gui
         Widgets
-        QUIET)
+        REQUIRED)
 
 file(GLOB CPP_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
 file(GLOB HPP_FILES ${PROJECT_SOURCE_DIR}/src/include/*.hpp)
