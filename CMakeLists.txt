@@ -22,7 +22,8 @@ file(GLOB HPP_FILES ${PROJECT_SOURCE_DIR}/src/include/*.hpp)
 
 add_executable(spork
         ${CPP_FILES}
-        ${HPP_FILES})
+        ${HPP_FILES}
+        images.qrc)
 
 target_include_directories(spork PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src/include" ${GLM_INCLUDE_DIRS})
 target_link_libraries(spork

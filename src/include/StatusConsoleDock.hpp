@@ -6,7 +6,7 @@
 
 class StatusConsoleDock : public QDockWidget {
 public:
-    explicit StatusConsoleDock(const QString &title, QWidget* parent);
+    explicit StatusConsoleDock(QWidget* parent);
 private:
     StatusConsole *console{};
 };

@@ -8,6 +8,7 @@
 #include "GameCanvas.hpp"
 #include "StatusConsoleDock.hpp"
 #include "Game.hpp"
+#include "ControlPanel.hpp"
 
 class QPushButton;
 class Application : public QMainWindow
@@ -18,9 +19,11 @@ public:
 private:
     Game *game;
 
-    QDockWidget *right;
+    QDockWidget *right_dock;
     QToolBar *tool_bar;
     StatusConsoleDock *console_dock;
+    ControlPanel *control_panel;
+    QBoxLayout *central_widget_layout;
 };
 
 #endif //SPORK_APPLICATION_HPP
