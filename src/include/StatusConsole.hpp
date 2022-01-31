@@ -2,10 +2,15 @@
 #define SPORK_STATUSCONSOLE_H
 
 #include <QTextEdit>
+#include <QGraphicsView>
 
-class StatusConsole : public QTextEdit {
+class StatusConsole : public QGraphicsView {
 public:
     explicit StatusConsole(QWidget* parent = nullptr);
+
+private:
+    QPixmap border;
+    QGraphicsScene *scene;
 };
 
 

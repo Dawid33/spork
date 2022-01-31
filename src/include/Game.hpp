@@ -3,6 +3,7 @@
 
 #include <QThread>
 #include <QOpenGLTexture>
+#include <QVBoxLayout>
 #include "GameCanvas.hpp"
 
 class Game : public QThread {
@@ -21,10 +22,12 @@ private:
     bool isRunning = true;
 
     bool isPaused = false;
+    QFrame *canvas_frame;
     GameCanvas *canvas;
     QOpenGLTexture *yellow;
     QTimer *paint_timer;
     bool shouldPaintCanvas = false;
+    QVBoxLayout *layout;
 signals:
 public slots:
     void paintCanvasAtNextUpdate();

@@ -4,6 +4,7 @@
 #include "Game.hpp"
 #include <QTimer>
 #include <QConstOverload>
+#include <QVBoxLayout>
 
 Game::Game(QWidget *parent) : QThread(parent) {
     paint_timer = new QTimer(this);
@@ -11,7 +12,7 @@ Game::Game(QWidget *parent) : QThread(parent) {
     connect(paint_timer, &QTimer::timeout, this, &Game::paintCanvasAtNextUpdate);
     paint_timer->start();
 
-    this->canvas = new GameCanvas(parent, this);
+    canvas = new GameCanvas(parent, this);
 }
 
 Game::~Game() {
@@ -20,7 +21,7 @@ Game::~Game() {
 }
 
 GameCanvas *Game::getCanvas() {
-    return this->canvas;
+    return canvas;
 }
 
 void Game::run() {

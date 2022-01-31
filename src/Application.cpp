@@ -7,36 +7,28 @@
 #include "StatusConsoleDock.hpp"
 #include "Game.hpp"
 #include "ControlPanel.hpp"
+#include "ControlPanelDock.hpp"
 
 Application::Application(QWidget *parent) : QMainWindow(parent) {
     resize(600,600);
     resize(QDesktopWidget().availableGeometry(this).size() * 0.5);
-    setStyleSheet("QMainWindow {background : url(:/resources/background.png);}"
+    setStyleSheet("QMainWindow {background : lightblue;}"
                   "QMainWindow::separator { 20px}");
 
-
-    QFrame *frame = new QFrame(this);
-    frame->setStyleSheet("QTextEdit { border-image: url(:/resources/border.png); border-width : 30px; color : white; }");
-    frame->setFrameStyle(QFrame::Box);
-    central_widget_layout = new QVBoxLayout;
-    frame->setLayout(central_widget_layout);
-    game = new Game(frame);
+    central_widget_frame = new QWidget(this);
+    central_widget_layout = new QBoxLayout(QBoxLayout::TopToBottom);
+    central_widget_layout->setContentsMargins(30,30,30,30);
+    central_widget_frame->setLayout(central_widget_layout);
+    game = new Game(central_widget_frame);
     central_widget_layout->addWidget(game->getCanvas());
     game->start();
 
-    control_panel = new ControlPanel();
-
-    right_dock = new QDockWidget(this);
-    right_dock->setMinimumWidth(250);
-    right_dock->setStyleSheet("QTextEdit { border-image: url(:/resources/border.png); border-width : 20px; color : white}");
-    right_dock->setWidget(control_panel);
-    right_dock->setTitleBarWidget(new QWidget(right_dock));
-
-    setCorner(Qt::Corner::BottomRightCorner, Qt::DockWidgetArea::RightDockWidgetArea);
+    control_panel_dock = new ControlPanelDock(this);
 
     console_dock = new StatusConsoleDock( this);
-    console_dock->setTitleBarWidget(new QWidget(console_dock));
-    console_dock->setMinimumHeight(200);
+    console_dock->show();
+
+    setCorner(Qt::Corner::BottomRightCorner, Qt::DockWidgetArea::RightDockWidgetArea);
 
     tool_bar = new QToolBar(this);
     tool_bar->setMovable(false);
@@ -44,11 +36,11 @@ Application::Application(QWidget *parent) : QMainWindow(parent) {
     tool_bar->addAction("Two");
 
     addDockWidget(Qt::DockWidgetArea::BottomDockWidgetArea, console_dock);
-    addDockWidget(Qt::DockWidgetArea::RightDockWidgetArea, right_dock);
+    addDockWidget(Qt::DockWidgetArea::RightDockWidgetArea, control_panel_dock);
     addToolBar(Qt::ToolBarArea::TopToolBarArea, tool_bar);
 
 
-    setCentralWidget(frame);
+    setCentralWidget(central_widget_frame);
 }
 
 Application::~Application() {
