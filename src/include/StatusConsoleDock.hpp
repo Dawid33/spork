@@ -9,8 +9,8 @@
 class StatusConsoleDock : public QDockWidget {
 public:
     explicit StatusConsoleDock(QWidget* parent);
+    StatusConsole *console;
 private:
-    StatusConsole *console{};
     DockTitleBar *title_bar;
 };
 

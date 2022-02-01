@@ -4,9 +4,12 @@
 #include <QTextEdit>
 #include <QGraphicsView>
 
-class StatusConsole : public QGraphicsView {
+class StatusConsole : public QWidget {
 public:
     explicit StatusConsole(QWidget* parent = nullptr);
+
+protected:
+    void paintEvent(QPaintEvent *);
 
 private:
     QPixmap border;

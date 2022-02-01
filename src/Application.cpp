@@ -2,6 +2,7 @@
 #include <QDockWidget>
 #include <QBoxLayout>
 #include <QVBoxLayout>
+#include <QSizePolicy>
 #include <iostream>
 #include "Application.hpp"
 #include "StatusConsoleDock.hpp"
@@ -10,8 +11,8 @@
 #include "ControlPanelDock.hpp"
 
 Application::Application(QWidget *parent) : QMainWindow(parent) {
-    resize(600,600);
-    resize(QDesktopWidget().availableGeometry(this).size() * 0.5);
+    //resize(600,600);
+    //resize(QDesktopWidget().availableGeometry(this).size() * 0.5);
     setStyleSheet("QMainWindow {background : lightblue;}"
                   "QMainWindow::separator { 20px}");
 
@@ -26,7 +27,6 @@ Application::Application(QWidget *parent) : QMainWindow(parent) {
     control_panel_dock = new ControlPanelDock(this);
 
     console_dock = new StatusConsoleDock( this);
-    console_dock->show();
 
     setCorner(Qt::Corner::BottomRightCorner, Qt::DockWidgetArea::RightDockWidgetArea);
 
@@ -38,7 +38,6 @@ Application::Application(QWidget *parent) : QMainWindow(parent) {
     addDockWidget(Qt::DockWidgetArea::BottomDockWidgetArea, console_dock);
     addDockWidget(Qt::DockWidgetArea::RightDockWidgetArea, control_panel_dock);
     addToolBar(Qt::ToolBarArea::TopToolBarArea, tool_bar);
-
 
     setCentralWidget(central_widget_frame);
 }

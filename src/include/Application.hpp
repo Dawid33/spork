@@ -18,15 +18,16 @@ public:
     explicit Application(QWidget *parent = nullptr);
     ~Application() override;
 private:
-    Game *game;
 
+    Game *game;
     ControlPanelDock *control_panel_dock;
     QToolBar *tool_bar;
     StatusConsoleDock *console_dock;
-    QWidget *central_widget_frame;
 
+    QWidget *central_widget_frame;
     QBoxLayout *central_widget_layout;
     QBoxLayout *bottom_dock_layout;
+
     QBoxLayout *right_dock_layout;
 };
 

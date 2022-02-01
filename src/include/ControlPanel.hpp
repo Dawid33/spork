@@ -8,9 +8,15 @@
 #include <QWidget>
 #include <QTextEdit>
 
-class ControlPanel : public QTextEdit {
+class ControlPanel : public QWidget {
 public:
     explicit ControlPanel(QWidget* parent = nullptr);
+
+protected:
+    void paintEvent(QPaintEvent *);
+
+private:
+    QPixmap border;
 };
 
 
