@@ -1,7 +1,7 @@
 #include <QApplication>
 #include "Application.hpp"
 #include "Globals.h"
-int ui_scale = 6;
+int ui_scale = 5;
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
