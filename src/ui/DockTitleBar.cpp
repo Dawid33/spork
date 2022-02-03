@@ -1,10 +1,10 @@
 #include <QPainter>
 #include "DockTitleBar.hpp"
-#include "Globals.h"
+#include "../Globals.hpp"
 
 DockTitleBar::DockTitleBar(QString title, QWidget *parent, const char* image_path) : QLabel(title, parent) {
     background_image = QPixmap(image_path);
-    setFixedHeight(background_image.height() * ui_scale);
+    setFixedHeight(background_image.height());
 }
 
 void DockTitleBar::paintEvent(QPaintEvent *) {

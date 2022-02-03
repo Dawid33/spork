@@ -17,13 +17,10 @@ find_package(Qt5 COMPONENTS
         Widgets
         REQUIRED)
 
-file(GLOB CPP_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
-file(GLOB HPP_FILES ${PROJECT_SOURCE_DIR}/src/include/*.hpp)
-
-add_executable(spork
-        ${CPP_FILES}
-        ${HPP_FILES}
-        images.qrc)
+add_executable(spork images.qrc)
+add_subdirectory(${PROJECT_SOURCE_DIR}/src)
+add_subdirectory(${PROJECT_SOURCE_DIR}/src/ui)
+add_subdirectory(${PROJECT_SOURCE_DIR}/src/ui/menu_bar)
 
 target_include_directories(spork PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src/include" ${GLM_INCLUDE_DIRS})
 target_link_libraries(spork

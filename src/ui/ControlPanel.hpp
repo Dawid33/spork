@@ -11,7 +11,6 @@
 class ControlPanel : public QWidget {
 public:
     explicit ControlPanel(QWidget* parent = nullptr);
-
 protected:
     void paintEvent(QPaintEvent *);
 
