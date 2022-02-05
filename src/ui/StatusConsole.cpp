@@ -4,7 +4,7 @@
 #include "../Globals.hpp"
 
 StatusConsole::StatusConsole(QWidget *parent) : QWidget(parent) {
-    border_base = QPixmap("./resources/console_border.png");
+    border_base = QPixmap("./resources/bottom.png");
     border = border_base;
     setMinimumHeight(border.height());
     setMinimumWidth(border.width());

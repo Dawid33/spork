@@ -5,7 +5,7 @@
 #include "../Globals.hpp"
 
 ControlPanel::ControlPanel(QWidget *parent) : QWidget(parent) {
-    border_base = QPixmap("./resources/inventory_old.png");
+    border_base = QPixmap("./resources/right.png");
     border = border_base;
     setMinimumHeight(border.height());
     setMinimumWidth(border.width());

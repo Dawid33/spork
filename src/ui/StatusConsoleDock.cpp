@@ -5,7 +5,7 @@
 
 StatusConsoleDock::StatusConsoleDock(QWidget *parent) : QDockWidget(parent) {
     console = new StatusConsole(this);
-    title_bar = new DockTitleBar("Status Console Dock", this, "./resources/console_title.png");
+    title_bar = new DockTitleBar("Status Console Dock", this, "./resources/bottom_title.png");
 
     setTitleBarWidget(title_bar);
     setWidget(console);

@@ -13,12 +13,11 @@
 #include "ui/ControlPanelDock.hpp"
 
 Application::Application(QWidget *parent) : QMainWindow(parent) {
-    setStyleSheet("QMainWindow {background : lightblue;}"
-                  "QMainWindow::separator {20px}");
+    setStyleSheet("QMainWindow {background : lightblue;}");
 
     central_widget_frame = new QWidget(this);
     central_widget_layout = new QBoxLayout(QBoxLayout::TopToBottom);
-    central_widget_layout->setContentsMargins(30,30,30,30);
+    central_widget_layout->setContentsMargins(-10,-10,-10,-10);
     central_widget_frame->setLayout(central_widget_layout);
     game = new Game(central_widget_frame);
     central_widget_layout->addWidget(game->getCanvas());
@@ -50,6 +49,10 @@ Application::Application(QWidget *parent) : QMainWindow(parent) {
     });
     resolutions_menu->addAction("640x360", [=]() -> void {
         this->resize(640, 360);
+        this->showNormal();
+    });
+    resolutions_menu->addAction("1024x768", [=]() -> void {
+        this->resize(1024, 768);
         this->showNormal();
     });
     menu_bar->addMenu(resolutions_menu);
