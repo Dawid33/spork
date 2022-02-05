@@ -11,11 +11,11 @@
 class ControlPanel : public QWidget {
 public:
     explicit ControlPanel(QWidget* parent = nullptr);
+    QPixmap border;
+    QPixmap border_base;
 protected:
     void paintEvent(QPaintEvent *);
-
 private:
-    QPixmap border;
 };
 
 

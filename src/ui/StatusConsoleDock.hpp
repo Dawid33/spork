@@ -10,6 +10,8 @@ class StatusConsoleDock : public QDockWidget {
 public:
     explicit StatusConsoleDock(QWidget* parent);
     StatusConsole *console;
+protected:
+    void resizeEvent(QResizeEvent *event) override;
 private:
     DockTitleBar *title_bar;
 };

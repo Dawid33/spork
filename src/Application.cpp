@@ -41,15 +41,15 @@ Application::Application(QWidget *parent) : QMainWindow(parent) {
         this->showFullScreen();
     });
     resolutions_menu->addAction("1920x1080", [=]() -> void {
-        this->setFixedSize(1920, 1080);
+        this->resize(1920, 1080);
         this->showNormal();
     });
     resolutions_menu->addAction("1280x720", [=]() -> void {
-        this->setFixedSize(1280, 720);
+        this->resize(1280, 720);
         this->showNormal();
     });
     resolutions_menu->addAction("640x360", [=]() -> void {
-        this->setFixedSize(640, 360);
+        this->resize(640, 360);
         this->showNormal();
     });
     menu_bar->addMenu(resolutions_menu);
@@ -58,7 +58,6 @@ Application::Application(QWidget *parent) : QMainWindow(parent) {
     addDockWidget(Qt::DockWidgetArea::BottomDockWidgetArea, console_dock);
     addDockWidget(Qt::DockWidgetArea::RightDockWidgetArea, control_panel_dock);
     setCentralWidget(central_widget_frame);
-    this->setFixedSize(640, 360);
 }
 
 Application::~Application() {
@@ -70,20 +69,21 @@ void Application::print_hello() {
     std::cout << "Hello, World!" << std::endl;
 }
 
-const int base_scale = 5;
 void Application::resizeEvent(QResizeEvent *event) {
-    std::cout << control_panel_dock->widget()->height() + control_panel_dock->titleBarWidget()->height() << " " << event->size().height() << std::endl;
-    std::cout << menuBar()->size().height() << std::endl;
-    int control_panel_height = control_panel_dock->widget()->height();
-    int title_bar_height = control_panel_dock->titleBarWidget()->height();
-    int vertical_space_left = event->size().height() - menuBar()->size().height();
-    double ratio =  (double)control_panel_height / (double)(control_panel_height + title_bar_height);
-    control_panel_dock->widget()->setFixedSize(event->size().width() / 2, ratio * vertical_space_left);
-    control_panel_dock->titleBarWidget()->setFixedSize(event->size().width() / 2, abs((ratio - 1)) * vertical_space_left);
+    // std::cout << control_panel_dock->widget()->height() + control_panel_dock->titleBarWidget()->height() << " " << event->size().height() << std::endl;
+    // std::cout << menuBar()->size().height() << std::endl;
+
+    int vertical_space_left = event->size().height();
+    //control_panel_dock->widget()->setSize(event->size().width() / 2, vertical_space_left);
+
+    // int control_panel_height = control_panel_dock->widget()->height();
+    // int title_bar_height = control_panel_dock->titleBarWidget()->height();
+    // double ratio =  (double)control_panel_height / (double)(control_panel_height + title_bar_height);
+    // control_panel_dock->titleBarWidget()->setFixedSize(event->size().width() / 2, abs((ratio - 1)) * vertical_space_left);
 
 //    control_panel_dock->titleBarWidget()->setFixedSize(
 //            control_panel_dock->widget()->width(), 16 * 2);
-//
+
 //    console_dock->widget()->setFixedSize(event->size().width() / 2, event->size().height() / 2);
 //    console_dock->titleBarWidget()->setFixedSize(
 //            console_dock->widget()->width(), 16 * 2);

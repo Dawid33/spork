@@ -8,6 +8,8 @@
 class ControlPanelDock : public QDockWidget {
 public:
     explicit ControlPanelDock(QWidget* parent);
+protected:
+    void resizeEvent(QResizeEvent *event);
 private:
     ControlPanel *control_panel;
     DockTitleBar *title_bar;

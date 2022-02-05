@@ -7,12 +7,11 @@
 class StatusConsole : public QWidget {
 public:
     explicit StatusConsole(QWidget* parent = nullptr);
-
+    QPixmap border;
+    QPixmap border_base;
 protected:
     void paintEvent(QPaintEvent *);
-
 private:
-    QPixmap border;
     QGraphicsScene *scene;
 };
 

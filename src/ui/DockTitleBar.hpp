@@ -7,10 +7,12 @@
 class DockTitleBar : public QLabel {
 public:
     explicit DockTitleBar(QString title, QWidget* parent, const char *image_path);
-private:
     QPixmap background_image;
+    QPixmap background_image_base;
+protected:
+    void paintEvent(QPaintEvent *); 
+private:
 
-    void paintEvent(QPaintEvent *);
 };
 
 

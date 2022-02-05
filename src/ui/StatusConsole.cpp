@@ -1,11 +1,11 @@
 #include "StatusConsole.hpp"
 #include <QPainter>
-#include <QGraphicsView>
-#include <QGraphicsItem>
+#include <iostream>
 #include "../Globals.hpp"
 
 StatusConsole::StatusConsole(QWidget *parent) : QWidget(parent) {
-    border = QPixmap("./resources/console_border.png");
+    border_base = QPixmap("./resources/console_border.png");
+    border = border_base;
     setMinimumHeight(border.height());
     setMinimumWidth(border.width());
 }
@@ -14,7 +14,6 @@ void StatusConsole::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
     painter.drawPixmap(0,0,this->width(), this->height(), border);
-
 }
 
 /*
