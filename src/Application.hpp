@@ -8,7 +8,7 @@
 #include "GameCanvas.hpp"
 #include "ui/StatusConsoleDock.hpp"
 #include "Game.hpp"
-#include "ui/ControlPanel.hpp"
+#include "ui/control_panel/ControlPanel.hpp"
 #include "ui/ControlPanelDock.hpp"
 #include "ui/menu_bar/ResolutionsMenu.hpp"
 

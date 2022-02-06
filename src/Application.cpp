@@ -9,10 +9,11 @@
 #include "Application.hpp"
 #include "ui/StatusConsoleDock.hpp"
 #include "Game.hpp"
-#include "ui/ControlPanel.hpp"
+#include "ui/control_panel/ControlPanel.hpp"
 #include "ui/ControlPanelDock.hpp"
 
 Application::Application(QWidget *parent) : QMainWindow(parent) {
+    this->resize(1280, 720);
     setStyleSheet("QMainWindow {background : lightblue;}");
 
     central_widget_frame = new QWidget(this);
@@ -29,12 +30,6 @@ Application::Application(QWidget *parent) : QMainWindow(parent) {
     setCorner(Qt::Corner::BottomLeftCorner, Qt::DockWidgetArea::LeftDockWidgetArea);
 
     auto *menu_bar = new QMenuBar(this);
-
-    QAction *newAct = new QAction(tr("&Test"), this);
-    newAct->setShortcuts(QKeySequence::New);
-    newAct->setStatusTip(tr("Test print"));
-    connect(newAct, &QAction::triggered, this, &Application::print_hello);
-    menu_bar->addAction(newAct);
 
     QMenu *resolutions_menu = new QMenu("Resolutions", this);
     resolutions_menu->addAction("Fullscreen", [=]() -> void {
@@ -61,6 +56,9 @@ Application::Application(QWidget *parent) : QMainWindow(parent) {
 
     addDockWidget(Qt::DockWidgetArea::BottomDockWidgetArea, console_dock);
     addDockWidget(Qt::DockWidgetArea::RightDockWidgetArea, control_panel_dock);
+
+    connect(((ControlPanel*)control_panel_dock->widget())->getUseButton(), &InventoryButton::clicked,
+            (StatusConsole*)console_dock->widget(), &StatusConsole::print_hello);
     setCentralWidget(central_widget_frame);
 }
 

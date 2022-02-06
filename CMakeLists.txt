@@ -21,6 +21,7 @@ add_executable(spork images.qrc)
 add_subdirectory(${PROJECT_SOURCE_DIR}/src)
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/ui)
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/ui/menu_bar)
+add_subdirectory(${PROJECT_SOURCE_DIR}/src/ui/control_panel)
 
 target_include_directories(spork PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src/include" ${GLM_INCLUDE_DIRS})
 target_link_libraries(spork

@@ -7,6 +7,4 @@ target_sources(spork PRIVATE
         DockTitleBar.cpp
         DockTitleBar.hpp
         ControlPanelDock.cpp
-        ControlPanelDock.hpp
-        ControlPanel.cpp
-        ControlPanel.hpp)
+        ControlPanelDock.hpp)

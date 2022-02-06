@@ -9,17 +9,20 @@
 #include <QTextEdit>
 #include <QPushButton>
 #include <QVector2D>
+#include "InventoryButton.hpp"
 
 class ControlPanel : public QWidget {
 public:
     explicit ControlPanel(QWidget* parent = nullptr);
+    InventoryButton* getUseButton();
+
     QPixmap border;
     QPixmap border_base;
 protected:
     void paintEvent(QPaintEvent *);
     void resizeEvent(QResizeEvent *event);
 private:
-    QPushButton *test_btn;
+    InventoryButton *use_btn;
 
     QVector2D original_size;
 };

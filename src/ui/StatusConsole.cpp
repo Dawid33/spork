@@ -18,7 +18,7 @@ StatusConsole::StatusConsole(QWidget *parent) : QWidget(parent) {
     text_edit->move(10, 10);
     text_edit->setFixedSize(size().width() - 20.0f, size().height() - 20.0f);
     text_edit->setFontPointSize(10.0);
-    text_edit->setText("Sample text");
+    text_edit->setText("Welcome to Spork!");
     text_edit->setTextInteractionFlags(Qt::TextBrowserInteraction);
 
 
@@ -58,25 +58,6 @@ void StatusConsole::append_text(QString text) {
         text_edit->verticalScrollBar()->setValue(scrollbarPrevValue);
 }
 
-/*
-    // Corners
-    // Top Left
-    painter.drawPixmap(0, 0, 5 * scale, 5 * scale, border, 0, 0, 5, 5);
-    // Bottom Left
-    painter.drawPixmap(0, (image_height - 5)*scale, 5*scale, 5*scale, border, 0, image_height - 5, 5, 5);
-    // Top Right
-    painter.drawPixmap(this->width()-(5*scale), 0, 5*scale, 5*scale, border, image_width-5, 0, 5, 5);
-    // Bottom Right
-    painter.drawPixmap(this->width()-(5*scale), (image_height-5)*scale, 5*scale, 5*scale, border, image_width-5, image_height-5, 5, 5);
-
-    // Center
-    painter.drawPixmap(5*scale, 5*scale, this->width()-(10*scale), this->height()-(10*scale), border, 5, 5, image_width - 10, image_height - 10);
-
-    // Edges
-    // Left
-    painter.drawPixmap(0, 5*scale, 5*scale, (image_height-10)*scale, border, 0, 5, 5, image_height - 10);
-    // Right
-    painter.drawPixmap(this->width()-(5*scale), 5*scale, 5*scale, (image_height-10)*scale, border, image_width - 5, 5, 5, image_height - 10);
-    //Top
-    painter.drawPixmap(5*scale, 0, (image_width-10)*scale, 5*scale, border, 5, 0, image_width - 10, 5);
- */
+void StatusConsole::print_hello() {
+    append_text("Hello, World!");
+}

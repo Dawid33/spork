@@ -2,7 +2,7 @@
 #define SPORK_CONTROLPANELDOCK_H
 
 #include <QDockWidget>
-#include "ControlPanel.hpp"
+#include "control_panel/ControlPanel.hpp"
 #include "DockTitleBar.hpp"
 
 class ControlPanelDock : public QDockWidget {

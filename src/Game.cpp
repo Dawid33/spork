@@ -25,12 +25,12 @@ GameCanvas *Game::getCanvas() {
 }
 
 void Game::run() {
-    while(this->isRunning) {
-        if (this->isPaused){
-            continue;
-        }
-        update();
-    }
+//    while(this->isRunning) {
+//        if (this->isPaused){
+//            continue;
+//        }
+//        update();
+//    }
 }
 
 void Game::stop() {

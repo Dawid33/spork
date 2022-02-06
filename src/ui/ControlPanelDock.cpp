@@ -3,7 +3,7 @@
 #include <iostream>
 #include "ControlPanelDock.hpp"
 
-ControlPanelDock::ControlPanelDock(QWidget *parent) {
+ControlPanelDock::ControlPanelDock(QWidget *parent) : QDockWidget(parent) {
     control_panel = new ControlPanel(this);
     //title_bar = new DockTitleBar("Control Panel Dock", this, "./resources/right_title.png");
 
@@ -17,4 +17,5 @@ void ControlPanelDock::resizeEvent(QResizeEvent *event) {
 
     control_panel->border = control_panel->border_base.scaledToHeight(event->size().height(), Qt::TransformationMode::FastTransformation);
     control_panel->setFixedWidth(control_panel->border.size().width());
+    QDockWidget::resizeEvent(event);
 }
