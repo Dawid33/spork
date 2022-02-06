@@ -26,6 +26,7 @@ Application::Application(QWidget *parent) : QMainWindow(parent) {
     control_panel_dock = new ControlPanelDock(this);
     console_dock = new StatusConsoleDock( this);
     setCorner(Qt::Corner::BottomRightCorner, Qt::DockWidgetArea::RightDockWidgetArea);
+    setCorner(Qt::Corner::BottomLeftCorner, Qt::DockWidgetArea::LeftDockWidgetArea);
 
     auto *menu_bar = new QMenuBar(this);
 
@@ -69,27 +70,12 @@ Application::~Application() {
 }
 
 void Application::print_hello() {
-    std::cout << "Hello, World!" << std::endl;
+    if (console_dock->widget() != nullptr) {
+        auto *console = (StatusConsole*)console_dock->widget();
+        console->append_text("Hello, World!");
+    }
 }
 
 void Application::resizeEvent(QResizeEvent *event) {
-    // std::cout << control_panel_dock->widget()->height() + control_panel_dock->titleBarWidget()->height() << " " << event->size().height() << std::endl;
-    // std::cout << menuBar()->size().height() << std::endl;
-
-    int vertical_space_left = event->size().height();
-    //control_panel_dock->widget()->setSize(event->size().width() / 2, vertical_space_left);
-
-    // int control_panel_height = control_panel_dock->widget()->height();
-    // int title_bar_height = control_panel_dock->titleBarWidget()->height();
-    // double ratio =  (double)control_panel_height / (double)(control_panel_height + title_bar_height);
-    // control_panel_dock->titleBarWidget()->setFixedSize(event->size().width() / 2, abs((ratio - 1)) * vertical_space_left);
-
-//    control_panel_dock->titleBarWidget()->setFixedSize(
-//            control_panel_dock->widget()->width(), 16 * 2);
-
-//    console_dock->widget()->setFixedSize(event->size().width() / 2, event->size().height() / 2);
-//    console_dock->titleBarWidget()->setFixedSize(
-//            console_dock->widget()->width(), 16 * 2);
-
     QWidget::resizeEvent(event);
 }

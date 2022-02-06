@@ -7,6 +7,8 @@
 
 #include <QWidget>
 #include <QTextEdit>
+#include <QPushButton>
+#include <QVector2D>
 
 class ControlPanel : public QWidget {
 public:
@@ -15,7 +17,11 @@ public:
     QPixmap border_base;
 protected:
     void paintEvent(QPaintEvent *);
+    void resizeEvent(QResizeEvent *event);
 private:
+    QPushButton *test_btn;
+
+    QVector2D original_size;
 };
 
 
