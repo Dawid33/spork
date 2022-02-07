@@ -8,7 +8,7 @@
 #include <QResizeEvent>
 #include "Application.hpp"
 #include "ui/StatusConsoleDock.hpp"
-#include "Game.hpp"
+#include "game/Game.hpp"
 #include "ui/control_panel/ControlPanel.hpp"
 #include "ui/ControlPanelDock.hpp"
 
@@ -16,12 +16,12 @@ Application::Application(QWidget *parent) : QMainWindow(parent) {
     this->resize(1280, 720);
     setStyleSheet("QMainWindow {background : lightblue;}");
 
-    central_widget_frame = new QWidget(this);
-    central_widget_layout = new QBoxLayout(QBoxLayout::TopToBottom);
-    central_widget_layout->setContentsMargins(-10,-10,-10,-10);
-    central_widget_frame->setLayout(central_widget_layout);
-    game = new Game(central_widget_frame);
-    central_widget_layout->addWidget(game->getCanvas());
+//    central_widget_frame = new QWidget(this);
+//    central_widget_layout = new QBoxLayout(QBoxLayout::TopToBottom);
+//    central_widget_layout->setContentsMargins(-10,-10,-10,-10);
+//    central_widget_frame->setLayout(central_widget_layout);
+    game = new Game(this);
+//    central_widget_layout->addWidget(game->getCanvas());
     game->start();
 
     control_panel_dock = new ControlPanelDock(this);
@@ -29,9 +29,37 @@ Application::Application(QWidget *parent) : QMainWindow(parent) {
     setCorner(Qt::Corner::BottomRightCorner, Qt::DockWidgetArea::RightDockWidgetArea);
     setCorner(Qt::Corner::BottomLeftCorner, Qt::DockWidgetArea::LeftDockWidgetArea);
 
+    addDockWidget(Qt::DockWidgetArea::BottomDockWidgetArea, console_dock);
+    addDockWidget(Qt::DockWidgetArea::RightDockWidgetArea, control_panel_dock);
+
+    // Connect UI Buttons.
+
+//    connect(((ControlPanel*)control_panel_dock->widget())->getUseButton(), &InventoryButton::clicked,
+//            (StatusConsole*)console_dock->widget(), &StatusConsole::print_hello);
+
+    setCentralWidget(game->getCanvas());
+}
+
+Application::~Application() {
+    game->stop();
+    delete this->game;
+}
+
+void Application::print_hello() {
+    if (console_dock->widget() != nullptr) {
+        auto *console = (StatusConsole*)console_dock->widget();
+        console->append_text("Hello, World!");
+    }
+}
+
+void Application::resizeEvent(QResizeEvent *event) {
+    QWidget::resizeEvent(event);
+}
+
+void Application::createMenuBar() {
     auto *menu_bar = new QMenuBar(this);
 
-    QMenu *resolutions_menu = new QMenu("Resolutions", this);
+    auto resolutions_menu = new QMenu("Resolutions", this);
     resolutions_menu->addAction("Fullscreen", [=]() -> void {
         this->showFullScreen();
     });
@@ -53,27 +81,4 @@ Application::Application(QWidget *parent) : QMainWindow(parent) {
     });
     menu_bar->addMenu(resolutions_menu);
     setMenuBar(menu_bar);
-
-    addDockWidget(Qt::DockWidgetArea::BottomDockWidgetArea, console_dock);
-    addDockWidget(Qt::DockWidgetArea::RightDockWidgetArea, control_panel_dock);
-
-    connect(((ControlPanel*)control_panel_dock->widget())->getUseButton(), &InventoryButton::clicked,
-            (StatusConsole*)console_dock->widget(), &StatusConsole::print_hello);
-    setCentralWidget(central_widget_frame);
-}
-
-Application::~Application() {
-    game->stop();
-    delete this->game;
-}
-
-void Application::print_hello() {
-    if (console_dock->widget() != nullptr) {
-        auto *console = (StatusConsole*)console_dock->widget();
-        console->append_text("Hello, World!");
-    }
-}
-
-void Application::resizeEvent(QResizeEvent *event) {
-    QWidget::resizeEvent(event);
 }

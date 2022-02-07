@@ -9,16 +9,11 @@ ControlPanel::ControlPanel(QWidget *parent) : QWidget(parent) {
     border = border_base;
     setMinimumHeight(border.height());
     setMinimumWidth(border.width());
-    std::cout << size().width() << " " << size().height() << std::endl;
+
+    use_btn = new InventoryButton(this, QPixmap("./resources/use_button.png"));
+    drop_btn = new InventoryButton(this, QPixmap("./resources/drop_button.png"));
 
     original_size = QVector2D(border.width(), border.height());
-
-    QVector2D diff = QVector2D(((float)size().width() - original_size.x()) / original_size.x() + 1,
-                               ((float)size().height() - original_size.y()) / original_size.y() + 1);
-
-    use_btn = new InventoryButton(this);
-    use_btn->setText("Hello");
-    use_btn->show();
 }
 
 void ControlPanel::paintEvent(QPaintEvent *) {
@@ -29,10 +24,11 @@ void ControlPanel::paintEvent(QPaintEvent *) {
 void ControlPanel::resizeEvent(QResizeEvent *event) {
     QVector2D diff = QVector2D(((float)event->size().width() - original_size.x()) / original_size.x() + 1,
                                ((float)event->size().height() - original_size.y()) / original_size.y() + 1);
-    //std::cout << original_size.x() << " " << event->size().width() << " " << diff.y() << std::endl;
 
     use_btn->move(72 * diff.x(), 103.0 * diff.y());
     use_btn->setFixedSize(21 * diff.x(), 10.0 * diff.y());
+    drop_btn->move(72 * diff.x(), 114.0 * diff.y());
+    drop_btn->setFixedSize(21 * diff.x(), 10.0 * diff.y());
 
     QWidget::resizeEvent(event);
 }

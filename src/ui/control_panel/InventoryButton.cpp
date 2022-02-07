@@ -2,9 +2,8 @@
 #include <QPainter>
 #include "InventoryButton.hpp"
 
-InventoryButton::InventoryButton(QWidget *parent) : QAbstractButton(parent) {
-    background_image_base = QPixmap("./resources/use_button.png");
-    background_image = background_image_base;
+InventoryButton::InventoryButton(QWidget *parent, QPixmap background) : QAbstractButton(parent) {
+    background_image = background;
 }
 
 void InventoryButton::paintEvent(QPaintEvent *event) {

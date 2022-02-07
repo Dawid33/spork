@@ -1,14 +1,14 @@
 #include <QImage>
 #include <iostream>
 #include <QOpenGLTexture>
+#include <QVBoxLayout>
 #include "Game.hpp"
 #include <QTimer>
 #include <QConstOverload>
-#include <QVBoxLayout>
 
 Game::Game(QWidget *parent) : QThread(parent) {
     paint_timer = new QTimer(this);
-    paint_timer->setInterval(10);
+    paint_timer->setInterval(20);
     connect(paint_timer, &QTimer::timeout, this, &Game::paintCanvasAtNextUpdate);
     paint_timer->start();
 
@@ -25,12 +25,12 @@ GameCanvas *Game::getCanvas() {
 }
 
 void Game::run() {
-//    while(this->isRunning) {
-//        if (this->isPaused){
-//            continue;
-//        }
-//        update();
-//    }
+    while(this->isRunning) {
+        if (this->isPaused){
+            continue;
+        }
+        update();
+    }
 }
 
 void Game::stop() {

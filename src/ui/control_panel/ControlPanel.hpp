@@ -23,6 +23,7 @@ protected:
     void resizeEvent(QResizeEvent *event);
 private:
     InventoryButton *use_btn;
+    InventoryButton *drop_btn;
 
     QVector2D original_size;
 };

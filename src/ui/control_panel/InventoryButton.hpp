@@ -9,15 +9,12 @@
 
 class InventoryButton : public QAbstractButton {
 public:
-    explicit InventoryButton(QWidget* parent = nullptr);
-    QPixmap border;
-    QPixmap border_base;
+    explicit InventoryButton(QWidget* parent, QPixmap background);
 protected:
     void paintEvent(QPaintEvent *) override;
     void resizeEvent(QResizeEvent *event) override;
 private:
     QPixmap background_image;
-    QPixmap background_image_base;
 };
 
 
