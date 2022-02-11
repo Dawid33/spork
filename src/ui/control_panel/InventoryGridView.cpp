@@ -10,14 +10,12 @@ InventoryGridView::InventoryGridView(QWidget *parent, QPixmap background) {
     auto header = new QHeaderView(Qt::Horizontal, this);
     setVerticalHeader(header);
     setShowGrid(true);
-    setFixedWidth(300);
-    setFixedHeight(300);
 }
 
 void InventoryGridView::paintEvent(QPaintEvent *event) {
+    QPainter painter(this);
 
-
-    QTableView::paintEvent(event);
+    painter.drawPixmap(0,0,this->width(), this->height(), background_image);
 }
 
 void InventoryGridView::resizeEvent(QResizeEvent *event) {

@@ -12,7 +12,7 @@ ControlPanel::ControlPanel(QWidget *parent) : QWidget(parent) {
 
     use_btn = new InventoryButton(this, QPixmap("./resources/use_button.png"));
     drop_btn = new InventoryButton(this, QPixmap("./resources/drop_button.png"));
-    inventory_view = new InventoryGridView(this, QPixmap("./resources/drop_button.png"));
+    inventory_view = new InventoryGridView(this, QPixmap("./resources/inventory.png"));
     inventory_model = new InventoryGridModel(this);
     inventory_view->setModel(inventory_model);
 
@@ -32,6 +32,8 @@ void ControlPanel::resizeEvent(QResizeEvent *event) {
     use_btn->setFixedSize(21 * diff.x(), 10.0 * diff.y());
     drop_btn->move(72 * diff.x(), 114.0 * diff.y());
     drop_btn->setFixedSize(21 * diff.x(), 10.0 * diff.y());
+
+    inventory_view->setFixedSize(84 * diff.x(), 50 * diff.y());
 
     QWidget::resizeEvent(event);
 }
