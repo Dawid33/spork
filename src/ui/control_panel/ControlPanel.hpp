@@ -1,7 +1,3 @@
-//
-// Created by dawids on 28/01/2022.
-//
-
 #ifndef SPORK_CONTROL_PANEL_H
 #define SPORK_CONTROL_PANEL_H
 
@@ -10,6 +6,7 @@
 #include <QPushButton>
 #include <QVector2D>
 #include "InventoryButton.hpp"
+#include "InventoryGrid.hpp"
 
 class ControlPanel : public QWidget {
 public:
@@ -24,6 +21,8 @@ protected:
 private:
     InventoryButton *use_btn;
     InventoryButton *drop_btn;
+
+    InventoryGrid *inventory;
 
     QVector2D original_size;
 };

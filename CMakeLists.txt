@@ -16,11 +16,11 @@ file(COPY ${CMAKE_SOURCE_DIR}/resources DESTINATION ${CMAKE_BINARY_DIR})
 
 find_package(PkgConfig REQUIRED)
 pkg_search_module(GLM REQUIRED glm)
-#find_package(Qt5 COMPONENTS
-#        Core
-#        Gui
-#        Widgets
-#        QUIET)
+find_package(Qt5 COMPONENTS
+       Core
+       Gui
+       Widgets
+       QUIET)
 
 add_executable(spork images.qrc)
 add_subdirectory(${PROJECT_SOURCE_DIR}/src)
@@ -31,7 +31,7 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/src/ui/control_panel)
 # ${GLM_INCLUDE_DIRS}
 
 
-IF(QT5_FOUND)
+IF(Qt5_FOUND)
     message("Linking with existing QT5 libraries...")
     target_link_libraries(spork
             Qt5::Core

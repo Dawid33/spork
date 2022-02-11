@@ -1,7 +1,3 @@
-//
-// Created by dawids on 06/02/2022.
-//
-
 #ifndef SPORK_INVENTORYBUTTON_HPP
 #define SPORK_INVENTORYBUTTON_HPP
 

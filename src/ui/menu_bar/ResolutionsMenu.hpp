@@ -1,7 +1,3 @@
-//
-// Created by dawids on 03/02/2022.
-//
-
 #ifndef SPORK_RESOLUTIONSMENU_HPP
 #define SPORK_RESOLUTIONSMENU_HPP
 
