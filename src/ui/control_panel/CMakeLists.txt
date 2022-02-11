@@ -3,5 +3,9 @@ target_sources(spork PRIVATE
         ControlPanel.cpp
         InventoryButton.cpp
         InventoryButton.hpp
-        InventoryGrid.cpp
-        InventoryGrid.hpp)
+        InventoryGridView.cpp
+        InventoryGridView.hpp
+        InventoryGridModel.cpp
+        InventoryGridModel.hpp
+        InventoryItem.cpp
+        InventoryItem.hpp)

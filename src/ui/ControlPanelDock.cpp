@@ -2,6 +2,7 @@
 #include <QWidget>
 #include <iostream>
 #include "ControlPanelDock.hpp"
+#include "control_panel/ControlPanel.hpp"
 
 ControlPanelDock::ControlPanelDock(QWidget *parent) : QDockWidget(parent) {
     control_panel = new ControlPanel(this);

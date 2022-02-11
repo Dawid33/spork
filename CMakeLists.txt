@@ -28,8 +28,7 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/src/ui)
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/ui/menu_bar)
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/ui/control_panel)
 
-# ${GLM_INCLUDE_DIRS}
-
+target_include_directories(spork PRIVATE ${GLM_INCLUDE_DIRS})
 
 IF(Qt5_FOUND)
     message("Linking with existing QT5 libraries...")
@@ -39,6 +38,7 @@ IF(Qt5_FOUND)
             Qt5::Widgets
             ${GLM_LIBRARY_DIRS})
 ELSE()
+    message("QT5 not found, building from source")
     ExternalProject_Add(qt5_build
             GIT_REPOSITORY  "https://github.com/qt/qt5"
             GIT_TAG         v6.2.3

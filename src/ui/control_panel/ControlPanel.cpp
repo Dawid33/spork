@@ -12,6 +12,9 @@ ControlPanel::ControlPanel(QWidget *parent) : QWidget(parent) {
 
     use_btn = new InventoryButton(this, QPixmap("./resources/use_button.png"));
     drop_btn = new InventoryButton(this, QPixmap("./resources/drop_button.png"));
+    inventory_view = new InventoryGridView(this, QPixmap("./resources/drop_button.png"));
+    inventory_model = new InventoryGridModel(this);
+    inventory_view->setModel(inventory_model);
 
     original_size = QVector2D(border.width(), border.height());
 }

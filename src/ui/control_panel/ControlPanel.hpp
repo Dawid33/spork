@@ -6,11 +6,12 @@
 #include <QPushButton>
 #include <QVector2D>
 #include "InventoryButton.hpp"
-#include "InventoryGrid.hpp"
+#include "InventoryGridView.hpp"
+#include "InventoryGridModel.hpp"
 
 class ControlPanel : public QWidget {
 public:
-    explicit ControlPanel(QWidget* parent = nullptr);
+    explicit ControlPanel(QWidget* parent);
     InventoryButton* getUseButton();
 
     QPixmap border;
@@ -22,7 +23,8 @@ private:
     InventoryButton *use_btn;
     InventoryButton *drop_btn;
 
-    InventoryGrid *inventory;
+    InventoryGridView *inventory_view;
+    InventoryGridModel *inventory_model;
 
     QVector2D original_size;
 };
