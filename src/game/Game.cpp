@@ -7,16 +7,16 @@
 #include <QConstOverload>
 
 Game::Game(QWidget *parent) : QThread(parent) {
-    paint_timer = new QTimer(this);
-    paint_timer->setInterval(20);
-    connect(paint_timer, &QTimer::timeout, this, &Game::paintCanvasAtNextUpdate);
-    paint_timer->start();
+    // paint_timer = new QTimer(this);
+    // paint_timer->setInterval(20);
+    // connect(paint_timer, &QTimer::timeout, this, &Game::paintCanvasAtNextUpdate);
+    // paint_timer->start();
 
     canvas = new GameCanvas(parent, this);
 }
 
 Game::~Game() {
-    delete this->paint_timer;
+    //delete this->paint_timer;
     delete this->canvas;
 }
 
@@ -39,12 +39,12 @@ void Game::stop() {
 }
 
 void Game::update() {
-    if (shouldPaintCanvas) {
-        canvas->update();
-        shouldPaintCanvas = false;
-    }
+    // if (shouldPaintCanvas) {
+    //     canvas->update();
+    //     shouldPaintCanvas = false;
+    // }
 }
 
-void Game::paintCanvasAtNextUpdate() {
-    shouldPaintCanvas = true;
-}
+// void Game::paintCanvasAtNextUpdate() {
+//     shouldPaintCanvas = true;
+// }

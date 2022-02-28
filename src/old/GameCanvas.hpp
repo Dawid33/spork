@@ -8,15 +8,20 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <QFrame>
-#include <QGraphicsScene>
 
 class Game;
-class GameCanvas : public QGraphicsScene {
+class GameCanvas : public QOpenGLWidget {
 public:
     explicit GameCanvas(QWidget *parent, Game *game);
 protected:
+    void initializeGL();
+    void resizeGL(int width, int height);
+    void paintGL();
 private:
     Game* game = nullptr;
+    QOpenGLTexture *yellow{};
+    GLint uniModel;
+    std::chrono::time_point<std::chrono::system_clock> time_start;
 };
 
 

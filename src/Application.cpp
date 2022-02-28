@@ -36,7 +36,7 @@ Application::Application(QWidget *parent) : QMainWindow(parent) {
     connect(((ControlPanel*)control_panel_dock->widget()), &ControlPanel::selectedItem,
             this, &Application::print_hello);
 
-    setCentralWidget(game->getCanvas());
+    //setCentralWidget((QWidget*)game->getCanvas());
 }
 
 Application::~Application() {

@@ -5,6 +5,7 @@
 #include <QPainter>
 #include <QScrollBar>
 #include <QTableWidget>
+#include <iostream>
 #include "InventoryGrid.hpp"
 #include "DrawInventoryItem.hpp"
 
@@ -31,11 +32,17 @@ InventoryGrid::InventoryGrid(QWidget *parent, QPixmap background) : QTableWidget
 
 void InventoryGrid::resizeEvent(QResizeEvent *event) {
     for (int i = 0; i < rowCount(); i++) {
-        setRowHeight(i, 0.33333333333f * event->size().height());
+        setRowHeight(i, 0.3333333333333f * event->size().height());
     }
+    double column_width = 0.2f * event->size().width();
+    int actual = 0;
     for (int i = 0; i < columnCount(); i++) {
-        setColumnWidth(i, 0.2f * event->size().width());
+        setColumnWidth(i, column_width);
+        actual += columnWidth(i);
     }
+    // TODO : Columns can't be made smaller than some limit, try resizing the window height
+    // with the below code.
+    //std::cout << event->size().width() << ":" << actual << std::endl;
     QTableView::resizeEvent(event);
 }
 
