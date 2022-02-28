@@ -22,13 +22,14 @@ public:
 
     void createMenuBar();
 private slots:
-    void print_hello();
+    void print_hello(InventoryItem *item);
 private:
     Game *game;
     ControlPanelDock *control_panel_dock;
-    StatusConsoleDock *console_dock;
 
+    StatusConsoleDock *console_dock;
     QWidget *central_widget_frame;
+
     QBoxLayout *central_widget_layout;
 
     QMenu *resolutions_menu;

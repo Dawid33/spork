@@ -6,25 +6,29 @@
 #include <QPushButton>
 #include <QVector2D>
 #include "InventoryButton.hpp"
-#include "InventoryGridView.hpp"
-#include "InventoryGridModel.hpp"
+#include "InventoryGrid.hpp"
+#include "InventoryItem.hpp"
 
 class ControlPanel : public QWidget {
+    Q_OBJECT
 public:
     explicit ControlPanel(QWidget* parent);
-    InventoryButton* getUseButton();
+    InventoryButton* useButton();
+    InventoryGrid* inventory();
 
     QPixmap border;
     QPixmap border_base;
+protected slots:
+    void clickedInventoryCell(int row, int column);
+signals:
+    void selectedItem(InventoryItem *item);
 protected:
-    void paintEvent(QPaintEvent *);
-    void resizeEvent(QResizeEvent *event);
+    void paintEvent(QPaintEvent *) override;
+    void resizeEvent(QResizeEvent *event) override;
 private:
     InventoryButton *use_btn;
     InventoryButton *drop_btn;
-
-    InventoryGridView *inventory_view;
-    InventoryGridModel *inventory_model;
+    InventoryGrid *inventory_grid;
 
     QVector2D original_size;
 };

@@ -1,8 +1,10 @@
 #include <QPainter>
 #include <iostream>
 #include <QResizeEvent>
+#include <valarray>
 #include "ControlPanel.hpp"
-#include "../../Globals.hpp"
+#include "InventoryItem.hpp"
+#include <QDebug>
 
 ControlPanel::ControlPanel(QWidget *parent) : QWidget(parent) {
     border_base = QPixmap("./resources/right.png");
@@ -12,9 +14,12 @@ ControlPanel::ControlPanel(QWidget *parent) : QWidget(parent) {
 
     use_btn = new InventoryButton(this, QPixmap("./resources/use_button.png"));
     drop_btn = new InventoryButton(this, QPixmap("./resources/drop_button.png"));
-    inventory_view = new InventoryGridView(this, QPixmap("./resources/inventory.png"));
-    inventory_model = new InventoryGridModel(this);
-    inventory_view->setModel(inventory_model);
+    inventory_grid = new InventoryGrid(this, QPixmap("./resources/inventory_item.png"));
+
+    inventory_grid->setItem(0,1,new InventoryItem("Other", QPixmap("./resources/red_potion.png")));
+    inventory_grid->setItem(0,0,new InventoryItem("yes", QPixmap("./resources/red_potion.png")));
+
+    connect(inventory_grid, &InventoryGrid::cellClicked, this, &ControlPanel::clickedInventoryCell);
 
     original_size = QVector2D(border.width(), border.height());
 }
@@ -28,16 +33,27 @@ void ControlPanel::resizeEvent(QResizeEvent *event) {
     QVector2D diff = QVector2D(((float)event->size().width() - original_size.x()) / original_size.x() + 1,
                                ((float)event->size().height() - original_size.y()) / original_size.y() + 1);
 
+    // Move sub-widgets in control panel based on position in base image.
     use_btn->move(72 * diff.x(), 103.0 * diff.y());
     use_btn->setFixedSize(21 * diff.x(), 10.0 * diff.y());
+
     drop_btn->move(72 * diff.x(), 114.0 * diff.y());
     drop_btn->setFixedSize(21 * diff.x(), 10.0 * diff.y());
 
-    inventory_view->setFixedSize(84 * diff.x(), 50 * diff.y());
+    inventory_grid->setFixedSize(84 * diff.x(), 50 * diff.y());
+    inventory_grid->move((int)(9.0f * diff.x()), (int)(41.0f * diff.y()));
 
     QWidget::resizeEvent(event);
 }
 
-InventoryButton *ControlPanel::getUseButton() {
+InventoryButton *ControlPanel::useButton() {
     return use_btn;
+}
+
+InventoryGrid *ControlPanel::inventory() {
+    return inventory_grid;
+}
+
+void ControlPanel::clickedInventoryCell(int row, int column) {
+    emit selectedItem((InventoryItem*)inventory_grid->item(row, column));
 }

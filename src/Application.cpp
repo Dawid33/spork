@@ -1,27 +1,25 @@
+#include <iostream>
+#include <sstream>
 #include <QDesktopWidget>
 #include <QDockWidget>
 #include <QBoxLayout>
 #include <QVBoxLayout>
 #include <QSizePolicy>
 #include <QMenuBar>
-#include <iostream>
+#include <QDebug>
 #include <QResizeEvent>
 #include "Application.hpp"
 #include "ui/StatusConsoleDock.hpp"
 #include "game/Game.hpp"
 #include "ui/control_panel/ControlPanel.hpp"
 #include "ui/ControlPanelDock.hpp"
+#include "ui/control_panel/InventoryItem.hpp"
 
 Application::Application(QWidget *parent) : QMainWindow(parent) {
     this->resize(1280, 720);
     setStyleSheet("QMainWindow {background : lightblue;}");
 
-//    central_widget_frame = new QWidget(this);
-//    central_widget_layout = new QBoxLayout(QBoxLayout::TopToBottom);
-//    central_widget_layout->setContentsMargins(-10,-10,-10,-10);
-//    central_widget_frame->setLayout(central_widget_layout);
     game = new Game(this);
-//    central_widget_layout->addWidget(game->getCanvas());
     game->start();
 
     control_panel_dock = new ControlPanelDock(this);
@@ -33,9 +31,10 @@ Application::Application(QWidget *parent) : QMainWindow(parent) {
     addDockWidget(Qt::DockWidgetArea::RightDockWidgetArea, control_panel_dock);
 
     // Connect UI Buttons.
-
-//    connect(((ControlPanel*)control_panel_dock->widget())->getUseButton(), &InventoryButton::clicked,
+//    connect(((ControlPanel*)control_panel_dock->widget())->useButton(), &InventoryButton::clicked,
 //            (StatusConsole*)console_dock->widget(), &StatusConsole::print_hello);
+    connect(((ControlPanel*)control_panel_dock->widget()), &ControlPanel::selectedItem,
+            this, &Application::print_hello);
 
     setCentralWidget(game->getCanvas());
 }
@@ -45,10 +44,11 @@ Application::~Application() {
     delete this->game;
 }
 
-void Application::print_hello() {
-    if (console_dock->widget() != nullptr) {
+void Application::print_hello(InventoryItem *item) {
+    if (console_dock->widget() != nullptr && item != nullptr) {
         auto *console = (StatusConsole*)console_dock->widget();
-        console->append_text("Hello, World!");
+        QString s = QString("Item : %1").arg(item->getName());
+        console->append_text(s);
     }
 }
 
