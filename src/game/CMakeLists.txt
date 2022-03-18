@@ -1,6 +1,14 @@
 
 target_sources(spork PRIVATE
-        GameCanvas.hpp
-        GameCanvas.cpp
+        GameScene.hpp
+        GameScene.cpp
         Game.hpp
-        Game.cpp)
+        Game.cpp
+        Sprite.cpp
+        Sprite.hpp
+        Entity.cpp
+        Entity.hpp
+        Player.cpp
+        Player.hpp
+        GameView.cpp
+        GameView.hpp)

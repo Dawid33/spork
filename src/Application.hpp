@@ -5,12 +5,13 @@
 #include <QPushButton>
 #include <QToolBar>
 #include <QVBoxLayout>
-#include "game/GameCanvas.hpp"
+#include "game/GameScene.hpp"
 #include "ui/StatusConsoleDock.hpp"
 #include "game/Game.hpp"
 #include "ui/control_panel/ControlPanel.hpp"
 #include "ui/ControlPanelDock.hpp"
 #include "ui/menu_bar/ResolutionsMenu.hpp"
+#include "game/GameView.hpp"
 
 class QPushButton;
 class Application : public QMainWindow
@@ -26,6 +27,8 @@ private slots:
 private:
     Game *game;
     ControlPanelDock *control_panel_dock;
+    GameView *game_view;
+    GameScene *scene;
 
     StatusConsoleDock *console_dock;
     QWidget *central_widget_frame;

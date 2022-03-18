@@ -14,6 +14,7 @@
 #include "ui/control_panel/ControlPanel.hpp"
 #include "ui/ControlPanelDock.hpp"
 #include "ui/control_panel/InventoryItem.hpp"
+#include <QTimer>
 
 Application::Application(QWidget *parent) : QMainWindow(parent) {
     this->resize(1280, 720);
@@ -21,6 +22,10 @@ Application::Application(QWidget *parent) : QMainWindow(parent) {
 
     game = new Game(this);
     game->start();
+    game_view = new GameView(game, new GameScene(this));
+    QTransform trans;
+    trans.scale(2.5,2.5);
+    game_view->setTransform(trans, true);
 
     control_panel_dock = new ControlPanelDock(this);
     console_dock = new StatusConsoleDock( this);
@@ -36,7 +41,7 @@ Application::Application(QWidget *parent) : QMainWindow(parent) {
     connect(((ControlPanel*)control_panel_dock->widget()), &ControlPanel::selectedItem,
             this, &Application::print_hello);
 
-    setCentralWidget(game->getCanvas());
+    setCentralWidget(game_view);
 }
 
 Application::~Application() {

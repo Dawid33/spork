@@ -4,33 +4,43 @@
 #include <QThread>
 #include <QOpenGLTexture>
 #include <QVBoxLayout>
-#include "GameCanvas.hpp"
+#include <deque>
+#include "GameScene.hpp"
+#include "Entity.hpp"
+#include "Player.hpp"
+#include "GameView.hpp"
 
 class Game : public QThread {
     Q_OBJECT
 public:
-    friend GameCanvas;
+    friend GameView;
 
     explicit Game(QWidget *parent);
-    ~Game() override;
-    GameCanvas* getCanvas();
     void stop();
+    void keyPressEvent(QKeyEvent *event);
+
 protected:
     void run() override;
-private:
     void update();
-    bool isRunning = true;
+private:
+    void load_tiles(const QString &tile_map_file_name, const QString &map_file_name, std::vector<Sprite *> &tiles);
+    void load_entities(const QString &map_file_name, std::vector<Entity*> &entities);
 
+    bool isRunning = true;
     bool isPaused = false;
-    QFrame *canvas_frame;
-    GameCanvas *canvas;
-    QOpenGLTexture *yellow;
-    QTimer *paint_timer;
-    bool shouldPaintCanvas = false;
-    QVBoxLayout *layout;
+    bool shouldUpdate = false;
+
+    std::deque<int> key_events;
+    QTimer *game_tick_timer;
+    std::vector<Sprite*> tiles;
+    std::vector<Entity*> entities;
+    Player* player;
 signals:
+    void updateScene();
+    void moveViewport(int x, int y);
 public slots:
-    void paintCanvasAtNextUpdate();
+    void setShouldUpdate();
+
 };
 
 

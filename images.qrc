@@ -1,7 +1,5 @@
 <!DOCTYPE RCC><RCC version="1.0" prefix="/">
     <qresource>
-        <file>./resources/yellow.png</file>
-        <file>./resources/border.png</file>
-        <file>./resources/background.png</file>
+
     </qresource>
 </RCC>

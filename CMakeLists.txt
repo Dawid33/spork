@@ -24,6 +24,7 @@ find_package(Qt5 COMPONENTS
 
 add_executable(spork images.qrc)
 add_subdirectory(${PROJECT_SOURCE_DIR}/src)
+add_subdirectory(${PROJECT_SOURCE_DIR}/src/game)
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/ui)
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/ui/menu_bar)
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/ui/control_panel)
