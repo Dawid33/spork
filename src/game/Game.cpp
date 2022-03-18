@@ -37,6 +37,7 @@ void Game::stop() {
 }
 
 void Game::update() {
+<<<<<<< HEAD
     bool shouldUpdate = false;
     while(!key_events.empty()) {
         int key = key_events.front();
@@ -126,3 +127,14 @@ void Game::load_entities(const QString &map_file_name, std::vector<Entity *> &en
 void Game::keyPressEvent(QKeyEvent *event) {
     key_events.push_back(event->key());
 }
+=======
+    // if (shouldPaintCanvas) {
+    //     canvas->update();
+    //     shouldPaintCanvas = false;
+    // }
+}
+
+// void Game::paintCanvasAtNextUpdate() {
+//     shouldPaintCanvas = true;
+// }
+>>>>>>> 083b6674b73394a2492dbce524abd0324674fbf1

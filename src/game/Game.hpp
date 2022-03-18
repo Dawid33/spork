@@ -35,12 +35,12 @@ private:
     std::vector<Sprite*> tiles;
     std::vector<Entity*> entities;
     Player* player;
+
 signals:
     void updateScene();
     void moveViewport(int x, int y);
 public slots:
     void setShouldUpdate();
-
 };
 
 
