@@ -37,7 +37,6 @@ void Game::stop() {
 }
 
 void Game::update() {
-<<<<<<< HEAD
     bool shouldUpdate = false;
     while(!key_events.empty()) {
         int key = key_events.front();
@@ -107,7 +106,7 @@ void Game::load_tiles(const QString &tile_map_file_name, const QString &map_file
     for (int y = 0; y < map.size(); y++) {
         for (int x = 0; x < map[y].size(); x++) {
             int tile = map[y][x];
-            std::cout << tile << " ";
+            //std::cout << tile << " ";
             //std::cout << "(" << x << "," << y << ")";
             if (tile >= 0) {
                 auto sprite = new Sprite(images[tile]);
@@ -115,7 +114,7 @@ void Game::load_tiles(const QString &tile_map_file_name, const QString &map_file
                 tiles.emplace_back(sprite);
             }
         }
-        std::cout << std::endl;
+        //std::cout << std::endl;
     }
 }
 
@@ -127,14 +126,3 @@ void Game::load_entities(const QString &map_file_name, std::vector<Entity *> &en
 void Game::keyPressEvent(QKeyEvent *event) {
     key_events.push_back(event->key());
 }
-=======
-    // if (shouldPaintCanvas) {
-    //     canvas->update();
-    //     shouldPaintCanvas = false;
-    // }
-}
-
-// void Game::paintCanvasAtNextUpdate() {
-//     shouldPaintCanvas = true;
-// }
->>>>>>> 083b6674b73394a2492dbce524abd0324674fbf1

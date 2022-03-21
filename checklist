@@ -3,21 +3,26 @@
 - [ ] Multiple inheritance
 - [ ] namespaces
 - [ ] Programmer defined exceptions
+    - Put in exception when loading in map
 - [ ] Unions
 - [ ] Operator overloading
+    - Overload `<<` operator for priting debug info.
 - [ ] Abstract classes
+    - Is it enought to use them or do we need to create our own
 - [ ] Copy constructors (deep , shallow copy)
 - [ ] Bit structures
 - [ ] Advanced pre-processor directives
+    - What counts as advanced?
 - [ ] C++ Object Construction Sequence
+    - What is that
 - [ ] Initializer List
-- [ ] C++ References
-- [ ] Pointers
-- [ ] Inheritance
-- [ ] Destructors
-- [ ] Memory management
-- [ ] Header files (inclusion guards)
+- [X] C++ References
+- [X] Pointers
+- [X] Inheritance
+- [X] Destructors
+- [X] Memory management
+- [X] Header files (inclusion guards)
 - [ ] Arrays and pointers
 - [X] Friendship
-- [ ] Global variables
+- [X] Global variables
 - [X] Private, Public, Protected

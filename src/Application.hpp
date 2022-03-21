@@ -13,6 +13,7 @@
 #include "ui/menu_bar/ResolutionsMenu.hpp"
 #include "game/GameView.hpp"
 
+
 class QPushButton;
 class Application : public QMainWindow
 {
