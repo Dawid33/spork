@@ -15,9 +15,10 @@
 #include "ui/ControlPanelDock.hpp"
 #include "ui/control_panel/InventoryItem.hpp"
 #include <QTimer>
+#include "Globals.hpp"
 
 Application::Application(QWidget *parent) : QMainWindow(parent) {
-    this->resize(1280, 720);
+    this->resize(baseScreenWidth, baseScreenHeight);
     setStyleSheet("QMainWindow {background : lightblue;}");
 
     game = new Game(this);

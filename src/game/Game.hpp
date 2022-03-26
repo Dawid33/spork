@@ -25,7 +25,7 @@ protected:
 private:
     void load_tiles(const QString &tile_map_file_name, const QString &map_file_name, std::vector<Sprite *> &tiles);
     void load_entities(const QString &map_file_name, std::vector<Entity*> &entities);
-
+    
     bool isRunning = true;
     bool isPaused = false;
     bool shouldUpdate = false;

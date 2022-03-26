@@ -37,30 +37,30 @@ void Game::stop() {
 }
 
 void Game::update() {
-    bool shouldUpdate = false;
+    bool shouldUpdateGraphics = false;
     while(!key_events.empty()) {
         int key = key_events.front();
         if (key == Qt::Key_W) {
             player->move(0, 1);
-            shouldUpdate = true;
+            shouldUpdateGraphics = true;
             emit moveViewport(player->getPosition().x(), player->getPosition().y());
         } else if (key == Qt::Key_D) {
             player->move(1, 0);
-            shouldUpdate = true;
+            shouldUpdateGraphics = true;
             emit moveViewport(player->getPosition().x(), player->getPosition().y());
         } else if (key == Qt::Key_A) {
             player->move(-1, 0);
-            shouldUpdate = true;
+            shouldUpdateGraphics = true;
             emit moveViewport(player->getPosition().x(), player->getPosition().y());
         } else if (key == Qt::Key_S) {
             player->move(0, -1);
-            shouldUpdate = true;
+            shouldUpdateGraphics = true;
             emit moveViewport(player->getPosition().x(), player->getPosition().y());
         }
         key_events.pop_front();
     }
 
-    if (shouldUpdate) {
+    if (shouldUpdateGraphics) {
         emit updateScene();
     }
 }
@@ -106,7 +106,7 @@ void Game::load_tiles(const QString &tile_map_file_name, const QString &map_file
     for (int y = 0; y < map.size(); y++) {
         for (int x = 0; x < map[y].size(); x++) {
             int tile = map[y][x];
-            std::cout << tile << " ";
+            //std::cout << tile << " ";
             //std::cout << "(" << x << "," << y << ")";
             if (tile >= 0) {
                 auto sprite = new Sprite(images[tile]);
@@ -114,7 +114,7 @@ void Game::load_tiles(const QString &tile_map_file_name, const QString &map_file
                 tiles.emplace_back(sprite);
             }
         }
-        std::cout << std::endl;
+        //std::cout << std::endl;
     }
 }
 
