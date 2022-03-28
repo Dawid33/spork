@@ -47,7 +47,7 @@ QSize StatusConsole::sizeHint() const {
     return border.size();
 }
 
-void StatusConsole::append_text(QString text) {
+void StatusConsole::append_text(const QString &text) {
     QScrollBar *scrollbar = text_edit->verticalScrollBar();
     bool scrollbarAtBottom  = (scrollbar->value() >= (scrollbar->maximum() - 4));
     int scrollbarPrevValue = scrollbar->value();

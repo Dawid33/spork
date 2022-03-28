@@ -4,7 +4,20 @@
 
 class Entity : public Sprite {
 public:
-    explicit Entity(QPixmap image);
+    explicit Entity();
+    explicit Entity(QPixmap pixmap);
+    ~Entity();
+
+    QRect getCollisionRectangle();
+    void setCollisionRectable(QRect rect);
+
+    QString getOnEnterString();
+    void setOnEnterString(const QString &value);
+
+    bool has_entered = false;
+private:
+    QRect collision_rectangle;
+    QString on_enter = QString("");
 };
 
 

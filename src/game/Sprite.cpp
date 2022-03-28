@@ -14,6 +14,10 @@ void Sprite::move(int x, int y) {
     position.setY(position.y() + -y * 16);
 }
 
+void Sprite::move(QPoint p) {
+    move(p.x(),p.y());
+}
+
 void Sprite::updateGraphics() {
     graphics_item->setPos(position);
 }

@@ -39,36 +39,58 @@ void Game::stop() {
 }
 
 void Game::update() {
-    bool shouldUpdateGraphics = false;
+    if (key_events.empty()) {
+        player->setMoveDirection(0,0);
+    }
+
     while(!key_events.empty()) {
         int key = key_events.front();
         if (key == Qt::Key_W) {
-            player->move(0, 1);
-            shouldUpdateGraphics = true;
-            emit moveViewport(player->getPosition().x(), player->getPosition().y());
+            player->setMoveDirection(0,1);
         } else if (key == Qt::Key_D) {
-            player->move(1, 0);
-            shouldUpdateGraphics = true;
-            emit moveViewport(player->getPosition().x(), player->getPosition().y());
+            player->setMoveDirection(1,0);
         } else if (key == Qt::Key_A) {
-            player->move(-1, 0);
-            shouldUpdateGraphics = true;
-            emit moveViewport(player->getPosition().x(), player->getPosition().y());
+            player->setMoveDirection(-1,0);
         } else if (key == Qt::Key_S) {
-            player->move(0, -1);
-            shouldUpdateGraphics = true;
-            emit moveViewport(player->getPosition().x(), player->getPosition().y());
+            player->setMoveDirection(0,-1);
         }
         key_events.pop_front();
     }
 
-    if (shouldUpdateGraphics) {
+    if (player->getMoveDirection().x() != 0 || player->getMoveDirection().y() != 0) {
+        player->move(player->getMoveDirection());
+        for(Entity* e : entities) {
+            if( QRect(player->getPosition(), player->getPixmap().size()).intersects(e->getCollisionRectangle())) {
+                if (!e->has_entered) {
+                    e->has_entered = true;
+                    QString s = e->getOnEnterString();
+                    emit pushToConsole(s);
+                }
+            }
+        }
+
+        emit moveViewport(player->getPosition().x(), player->getPosition().y());
         emit updateScene();
     }
 }
 
 void Game::setShouldUpdate() {
     shouldUpdate = true;
+}
+
+QDomDocument load_document(const QString &filepath) {
+    QDomDocument doc("main");
+    QFile file(filepath);
+    if (!file.open(QIODevice::ReadOnly)) {
+        qDebug() << file.errorString();
+    }
+    if (!doc.setContent(&file)) {
+        qDebug() << "Cannot set content of QDomDocument";
+        file.close();
+        return doc;
+    }
+    file.close();
+    return doc;
 }
 
 void Game::load_tiles(const QString &tile_map_file_name, const QString &layer_name, std::vector<Sprite*> &tiles) {
@@ -84,17 +106,7 @@ void Game::load_tiles(const QString &tile_map_file_name, const QString &layer_na
         }
     }
 
-    QDomDocument doc("main");
-    QFile file("resources/main.tmx");
-    if (!file.open(QIODevice::ReadOnly)) {
-        qDebug() << file.errorString();
-    }
-    if (!doc.setContent(&file)) {
-        qDebug() << "Cannot set content of QDomDocument";
-        file.close();
-        return;
-    }
-    file.close();
+    auto doc = load_document("resources/main.tmx");
 
     QStringList csv_data;
     auto layers = doc.elementsByTagName("layer");
@@ -140,20 +152,60 @@ void Game::load_tiles(const QString &tile_map_file_name, const QString &layer_na
 
 void Game::load_entities(const QString &tile_image_name, const QString &tiles, std::vector<Entity *> &entities) {
     std::vector<Sprite*> raw;
+    // Get entites from the entities tile layer
     load_tiles(tile_image_name, tiles, raw);
+
     while(!raw.empty()) {
         if (raw.back()->getImageId() == PLAYER_TILE) {
             player = new Player(raw.back()->getPixmap());
             player->setPosition(raw.back()->getPosition());
-            qDebug() << "Position : " << player->getPosition();
             entities.push_back(player);
         } else {
-            entities.push_back((Entity*)raw.back());
+            Entity* e = new Entity(raw.back()->getPixmap());
+            e->setPosition(raw.back()->getPosition());
+            entities.push_back(e);
         }
         raw.pop_back();
     }
+
+    // Get "zones" from the object layer.
+    auto doc = load_document("resources/main.tmx");
+    auto objects = doc.elementsByTagName("object");
+    for (int i = 0; i < objects.length(); i++) {
+        Entity* entity = new Entity();
+
+        auto object = objects.at(i);
+        auto attributes = object.attributes();
+        auto x = attributes.namedItem("x").toAttr().value().toFloat();
+        auto y = attributes.namedItem("y").toAttr().value().toFloat();
+        auto width = attributes.namedItem("width").toAttr().value().toFloat();
+        auto height = attributes.namedItem("height").toAttr().value().toFloat();
+        entity->setCollisionRectable(QRect(x,y,width,height));
+
+        auto object_properties = object.attributes();
+        auto properties = object.firstChild().childNodes();
+        for (int j = 0; j < properties.length(); j++) {
+            auto property = properties.at(j);
+            auto name = property.attributes().namedItem("name").toAttr().value();
+            auto value = property.attributes().namedItem("value").toAttr().value();
+            if (name == QString("Text")) {
+                entity->setOnEnterString(value);
+            }
+        }
+        entities.push_back(entity);
+    }
 }
+
 
 void Game::keyPressEvent(QKeyEvent *event) {
     key_events.push_back(event->key());
+}
+
+Game::~Game() {
+//    for (Entity* e : entities) {
+//        delete e;
+//    }
+//    for (Sprite* s : tiles) {
+//        delete s;
+//    }
 }

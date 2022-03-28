@@ -20,6 +20,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     game->start();
     game_view = new GameView(game, new GameScene(this));
 
+    connect(game, &Game::pushToConsole, this, &MainWindow::printToConsole);
+
     QTransform trans;
     trans.scale(2.5,2.5);
     game_view->setTransform(trans, true);
@@ -33,10 +35,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     addDockWidget(Qt::DockWidgetArea::RightDockWidgetArea, control_panel_dock);
 
     // Connect UI Buttons.
-    connect(((ControlPanel*)control_panel_dock->widget())->useButton(), &InventoryButton::clicked,
-            (StatusConsole*)console_dock->widget(), &StatusConsole::print_hello);
+    connect((ControlPanel*)control_panel_dock->widget(), &ControlPanel::clickedUseButton,
+            this, &MainWindow::usedItem);
     connect(((ControlPanel*)control_panel_dock->widget()), &ControlPanel::selectedItem,
-            this, &MainWindow::print_hello);
+            this, &MainWindow::selectedItem);
 
     setCentralWidget(game_view);
 }
@@ -46,11 +48,26 @@ MainWindow::~MainWindow() {
     delete this->game;
 }
 
-void MainWindow::print_hello(InventoryItem *item) {
+void MainWindow::selectedItem(InventoryItem *item) {
     if (console_dock->widget() != nullptr && item != nullptr) {
         auto *console = (StatusConsole*)console_dock->widget();
         QString s = QString("Item : %1").arg(item->getName());
         console->append_text(s);
+    }
+}
+
+void MainWindow::usedItem(InventoryItem *item) {
+    if (console_dock->widget() != nullptr && item != nullptr) {
+        auto *console = (StatusConsole*)console_dock->widget();
+        QString s = QString("Item : %1").arg(item->getName());
+        console->append_text(s);
+    }
+}
+
+void MainWindow::printToConsole(const QString &value) {
+    if (console_dock->widget() != nullptr) {
+        auto *console = (StatusConsole*)console_dock->widget();
+        console->append_text(value);
     }
 }
 

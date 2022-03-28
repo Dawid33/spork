@@ -16,10 +16,10 @@ ControlPanel::ControlPanel(QWidget *parent) : QWidget(parent) {
     drop_btn = new InventoryButton(this, QPixmap("./resources/drop_button.png"));
     inventory_grid = new InventoryGrid(this, QPixmap("./resources/inventory_item.png"));
 
-    inventory_grid->setItem(0,1,new InventoryItem("Other", QPixmap("./resources/red_potion.png")));
-    inventory_grid->setItem(0,0,new InventoryItem("yes", QPixmap("./resources/red_potion.png")));
+    inventory_grid->setItem(0,0,new InventoryItem("Sword", QPixmap("./resources/sword.png")));
 
     connect(inventory_grid, &InventoryGrid::cellClicked, this, &ControlPanel::clickedInventoryCell);
+    connect(use_btn, &InventoryButton::clicked, this, &ControlPanel::useButtonPressed);
 
     original_size = QVector2D(border.width(), border.height());
 }
@@ -56,4 +56,11 @@ InventoryGrid *ControlPanel::inventory() {
 
 void ControlPanel::clickedInventoryCell(int row, int column) {
     emit selectedItem((InventoryItem*)inventory_grid->item(row, column));
+}
+
+void ControlPanel::useButtonPressed(bool) {
+    auto items = inventory_grid->selectedItems();
+    if (!items.isEmpty()) {
+        emit clickedUseButton((InventoryItem*)items.at(0));
+    }
 }

@@ -20,14 +20,18 @@ public:
     QPixmap border_base;
 protected slots:
     void clickedInventoryCell(int row, int column);
+    void useButtonPressed(bool);
 signals:
     void selectedItem(InventoryItem *item);
+    void clickedUseButton(InventoryItem *item);
 protected:
     void paintEvent(QPaintEvent *) override;
     void resizeEvent(QResizeEvent *event) override;
 private:
     InventoryButton *use_btn;
+
     InventoryButton *drop_btn;
+
     InventoryGrid *inventory_grid;
 
     QVector2D original_size;

@@ -10,7 +10,7 @@ public:
     explicit StatusConsole(QWidget* parent = nullptr);
     QPixmap border;
     QPixmap border_base;
-    void append_text(QString text);
+    void append_text(const QString &text);
 public slots:
     void print_hello();
 protected:

@@ -24,13 +24,17 @@ public:
 
     void createMenuBar();
 private slots:
-    void print_hello(InventoryItem *item);
+    void selectedItem(InventoryItem *item);
+    void usedItem(InventoryItem *item);
+    void printToConsole(const QString&);
 private:
+
     Game *game;
     GameView *game_view;
-    GameScene *scene;
 
+    GameScene *scene;
     ControlPanelDock *control_panel_dock;
+
     StatusConsoleDock *console_dock;
 };
 

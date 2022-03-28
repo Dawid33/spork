@@ -16,6 +16,7 @@ public:
     friend GameView;
 
     explicit Game(QWidget *parent);
+    ~Game() override;
     void stop();
     void keyPressEvent(QKeyEvent *event);
 
@@ -38,6 +39,7 @@ private:
 signals:
     void updateScene();
     void moveViewport(int x, int y);
+    void pushToConsole(const QString&);
 public slots:
     void setShouldUpdate();
 

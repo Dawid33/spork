@@ -40,7 +40,7 @@ void InventoryGrid::resizeEvent(QResizeEvent *event) {
         setColumnWidth(i, column_width);
         actual += columnWidth(i);
     }
-    // TODO : Columns can't be made smaller than some limit, try resizing the window height
+    // TODO : Columns can't be made smaller than some limit on some distros, try resizing the window height
     // with the below code.
     //std::cout << event->size().width() << ":" << actual << std::endl;
     QTableView::resizeEvent(event);

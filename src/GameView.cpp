@@ -22,8 +22,6 @@ GameView::GameView(Game *game, GameScene *scene) : QGraphicsView((QGraphicsScene
 
     int x = game->player->getPosition().x();
     int y = game->player->getPosition().y();
-    qDebug() << x;
-    qDebug() << y;
     moveViewport(x, y);
 }
 

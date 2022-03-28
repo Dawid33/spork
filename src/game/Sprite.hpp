@@ -7,7 +7,9 @@ class Sprite {
 public:
     explicit Sprite(QPixmap image);
 
-    void move(int x, int y);
+    virtual void move(int x, int y);
+    virtual void move(QPoint p);
+
     void updateGraphics();
     QGraphicsPixmapItem *graphicsItem();
 
