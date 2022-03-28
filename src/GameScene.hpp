@@ -9,7 +9,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <QFrame>
 #include <QGraphicsScene>
-#include "Sprite.hpp"
+#include "game/Sprite.hpp"
 
 class Game;
 class GameScene : public QGraphicsScene {

@@ -1,7 +1,5 @@
 
 target_sources(spork PRIVATE
-        GameScene.hpp
-        GameScene.cpp
         Game.hpp
         Game.cpp
         Sprite.cpp
@@ -9,6 +7,4 @@ target_sources(spork PRIVATE
         Entity.cpp
         Entity.hpp
         Player.cpp
-        Player.hpp
-        GameView.cpp
-        GameView.hpp)
+        Player.hpp)

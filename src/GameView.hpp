@@ -7,7 +7,7 @@
 #include <QGraphicsView>
 #include <QKeyEvent>
 #include "GameScene.hpp"
-#include "Player.hpp"
+#include "game/Player.hpp"
 
 class GameView : public QGraphicsView {
 public:

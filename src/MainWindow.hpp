@@ -1,25 +1,25 @@
-#ifndef SPORK_APPLICATION_HPP
-#define SPORK_APPLICATION_HPP
+#ifndef SPORK_MAINWINDOW_HPP
+#define SPORK_MAINWINDOW_HPP
 
 #include <QMainWindow>
 #include <QPushButton>
 #include <QToolBar>
 #include <QVBoxLayout>
-#include "game/GameScene.hpp"
+#include "GameScene.hpp"
 #include "ui/StatusConsoleDock.hpp"
 #include "game/Game.hpp"
 #include "ui/control_panel/ControlPanel.hpp"
 #include "ui/ControlPanelDock.hpp"
 #include "ui/menu_bar/ResolutionsMenu.hpp"
-#include "game/GameView.hpp"
+#include "GameView.hpp"
 
 
 class QPushButton;
-class Application : public QMainWindow
+class MainWindow : public QMainWindow
 {
 public:
-    explicit Application(QWidget *parent = nullptr);
-    ~Application() override;
+    explicit MainWindow(QWidget *parent = nullptr);
+    ~MainWindow() override;
     void resizeEvent(QResizeEvent *event) override;
 
     void createMenuBar();
@@ -27,16 +27,11 @@ private slots:
     void print_hello(InventoryItem *item);
 private:
     Game *game;
-    ControlPanelDock *control_panel_dock;
     GameView *game_view;
     GameScene *scene;
 
+    ControlPanelDock *control_panel_dock;
     StatusConsoleDock *console_dock;
-    QWidget *central_widget_frame;
-
-    QBoxLayout *central_widget_layout;
-
-    QMenu *resolutions_menu;
 };
 
-#endif //SPORK_APPLICATION_HPP
+#endif //SPORK_MAINWINDOW_HPP

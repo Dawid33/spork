@@ -1,5 +1,5 @@
 #include "GameView.hpp"
-#include "Game.hpp"
+#include "game/Game.hpp"
 #include <QDebug>
 
 GameView::GameView(Game *game, GameScene *scene) : QGraphicsView((QGraphicsScene*)scene){
@@ -8,8 +8,6 @@ GameView::GameView(Game *game, GameScene *scene) : QGraphicsView((QGraphicsScene
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-
-
     connect(game, &Game::updateScene, this, &GameView::updateScene);
     connect(game, &Game::moveViewport, this, &GameView::moveViewport);
 
@@ -17,13 +15,15 @@ GameView::GameView(Game *game, GameScene *scene) : QGraphicsView((QGraphicsScene
         s->updateGraphics();
         scene->addItem(s->graphicsItem());
     }
-    for (Entity* s : game->entities) {
+    for (Sprite* s : game->entities) {
         s->updateGraphics();
         scene->addItem(s->graphicsItem());
     }
 
     int x = game->player->getPosition().x();
-    int y = game->player->getPosition().x();
+    int y = game->player->getPosition().y();
+    qDebug() << x;
+    qDebug() << y;
     moveViewport(x, y);
 }
 

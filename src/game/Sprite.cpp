@@ -25,3 +25,20 @@ QGraphicsPixmapItem *Sprite::graphicsItem() {
 QPoint Sprite::getPosition() {
     return position;
 }
+
+int Sprite::getImageId() {
+    return image_id;
+}
+
+void Sprite::setImageId(int id) {
+    image_id = id;
+}
+
+QPixmap Sprite::getPixmap() {
+    return this->graphics_item->pixmap();
+}
+
+void Sprite::setPosition(QPoint p) {
+    position = p;
+}
+

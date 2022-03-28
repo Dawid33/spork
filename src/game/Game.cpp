@@ -1,7 +1,4 @@
-#include <QImage>
-#include <iostream>
-#include <QOpenGLTexture>
-#include <QVBoxLayout>
+#include <QDomDocument>
 #include "Game.hpp"
 #include <QTimer>
 #include <QConstOverload>
@@ -9,17 +6,22 @@
 #include <QDebug>
 #include <QKeyEvent>
 
+#define PLAYER_TILE 190
+
 Game::Game(QWidget *parent) : QThread(parent) {
     game_tick_timer = new QTimer();
     game_tick_timer->setInterval(20);
     connect(game_tick_timer, &QTimer::timeout, this, &Game::setShouldUpdate);
     game_tick_timer->start();
 
-    load_tiles("resources/raw.png", "resources/main.csv", tiles);
-    load_entities("resources/main.csv", entities);
+    load_tiles("resources/raw.png", "background_tiles", tiles);
+    load_entities("resources/raw.png", "entities", entities);
 }
 
 void Game::run() {
+    emit moveViewport(player->getPosition().x(), player->getPosition().y());
+    emit updateScene();
+
     while(this->isRunning) {
         if (this->isPaused){
             continue;
@@ -69,7 +71,7 @@ void Game::setShouldUpdate() {
     shouldUpdate = true;
 }
 
-void Game::load_tiles(const QString &tile_map_file_name, const QString &map_file_name, std::vector<Sprite*> &tiles) {
+void Game::load_tiles(const QString &tile_map_file_name, const QString &layer_name, std::vector<Sprite*> &tiles) {
     int tile_width = 16, tile_height = 16;
 
     // load in array of tiles from 0..n, n begin the amount of tiles in the tile_map_file_name.
@@ -82,24 +84,41 @@ void Game::load_tiles(const QString &tile_map_file_name, const QString &map_file
         }
     }
 
-    QFile file(map_file_name);
+    QDomDocument doc("main");
+    QFile file("resources/main.tmx");
     if (!file.open(QIODevice::ReadOnly)) {
         qDebug() << file.errorString();
     }
+    if (!doc.setContent(&file)) {
+        qDebug() << "Cannot set content of QDomDocument";
+        file.close();
+        return;
+    }
+    file.close();
 
-    // copy csv into map
-    std::vector<std::vector<int>> map;
-    int row = 0;
-    while (!file.atEnd()) {
-        QByteArray line = file.readLine();
-        auto nums = line.split(',');
-        map.emplace_back(std::vector<int>());
-        for(int i = 0; i < nums.count(); i++) {
-            //std::cout << nums[i].toInt() << " ";
-            map[row].emplace_back(nums[i].toInt());
+    QStringList csv_data;
+    auto layers = doc.elementsByTagName("layer");
+    for(int i = 0; i < layers.length(); i++) {
+        auto attributes = layers.at(i).attributes();
+        for (int j = 0; j < attributes.length(); j++) {
+            if (attributes.item(j).toAttr().name() == QString("name")) {
+                if (attributes.item(j).toAttr().value() == layer_name) {
+                    // Found layer node
+                    auto data_node = layers.at(i).firstChild();
+                    csv_data = data_node.toElement().text().split("\n");
+                }
+            }
         }
-        //std::cout << std::endl;
-        row++;
+    }
+
+
+    std::vector<std::vector<int>> map;
+    for(int i = 0; i < csv_data.length(); i++) {
+        auto nums = csv_data.at(i).split(",");
+        map.emplace_back(std::vector<int>());
+        for(int j = 0; j < nums.count(); j++) {
+            map[i].emplace_back(nums[j].toInt());
+        }
     }
 
     // Create sprite objects according to csv map.
@@ -108,9 +127,10 @@ void Game::load_tiles(const QString &tile_map_file_name, const QString &map_file
             int tile = map[y][x];
             //std::cout << tile << " ";
             //std::cout << "(" << x << "," << y << ")";
-            if (tile >= 0) {
-                auto sprite = new Sprite(images[tile]);
-                sprite->setPosition(x , y);
+            if (tile > 0) {
+                auto sprite = new Sprite(images[tile - 1]);
+                sprite->setImageId(tile - 1);
+                sprite->setPosition(x, y);
                 tiles.emplace_back(sprite);
             }
         }
@@ -118,9 +138,20 @@ void Game::load_tiles(const QString &tile_map_file_name, const QString &map_file
     }
 }
 
-void Game::load_entities(const QString &map_file_name, std::vector<Entity *> &entities) {
-    player = new Player(QPixmap("resources/player.png"));
-    entities.emplace_back(player);
+void Game::load_entities(const QString &tile_image_name, const QString &tiles, std::vector<Entity *> &entities) {
+    std::vector<Sprite*> raw;
+    load_tiles(tile_image_name, tiles, raw);
+    while(!raw.empty()) {
+        if (raw.back()->getImageId() == PLAYER_TILE) {
+            player = new Player(raw.back()->getPixmap());
+            player->setPosition(raw.back()->getPosition());
+            qDebug() << "Position : " << player->getPosition();
+            entities.push_back(player);
+        } else {
+            entities.push_back((Entity*)raw.back());
+        }
+        raw.pop_back();
+    }
 }
 
 void Game::keyPressEvent(QKeyEvent *event) {

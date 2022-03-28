@@ -5,10 +5,10 @@
 #include <QOpenGLTexture>
 #include <QVBoxLayout>
 #include <deque>
-#include "GameScene.hpp"
+#include "../GameScene.hpp"
 #include "Entity.hpp"
 #include "Player.hpp"
-#include "GameView.hpp"
+#include "../GameView.hpp"
 
 class Game : public QThread {
     Q_OBJECT
@@ -24,7 +24,6 @@ protected:
     void update();
 private:
     void load_tiles(const QString &tile_map_file_name, const QString &map_file_name, std::vector<Sprite *> &tiles);
-    void load_entities(const QString &map_file_name, std::vector<Entity*> &entities);
     
     bool isRunning = true;
     bool isPaused = false;
@@ -41,6 +40,8 @@ signals:
     void moveViewport(int x, int y);
 public slots:
     void setShouldUpdate();
+
+    void load_entities(const QString &tile_image_name, const QString &tiles, std::vector<Entity *> &entities);
 };
 
 
