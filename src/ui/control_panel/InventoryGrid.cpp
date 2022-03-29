@@ -16,6 +16,7 @@ InventoryGrid::InventoryGrid(QWidget *parent, QPixmap background) : QTableWidget
     verticalHeader()->setVisible(false);
     horizontalScrollBar()->setVisible(false);
     verticalScrollBar()->setVisible(false);
+    setEditTriggers(QAbstractItemView::NoEditTriggers);
 
     setStyleSheet("QTableWidget {background-color: transparent;}"
                   "QHeaderView::section {background-color: transparent;}"

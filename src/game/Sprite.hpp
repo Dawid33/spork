@@ -10,7 +10,7 @@ public:
     virtual void move(int x, int y);
     virtual void move(QPoint p);
 
-    void updateGraphics();
+    virtual void updateGraphics();
     QGraphicsPixmapItem *graphicsItem();
 
     QPixmap getPixmap();

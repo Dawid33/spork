@@ -1,5 +1,6 @@
 #include <QDomDocument>
 #include "Game.hpp"
+#include "Wizard.hpp"
 #include <QTimer>
 #include <QConstOverload>
 #include <QFile>
@@ -7,6 +8,7 @@
 #include <QKeyEvent>
 
 #define PLAYER_TILE 190
+#define WIZARD_TILE 197
 
 Game::Game(QWidget *parent) : QThread(parent) {
     game_tick_timer = new QTimer();
@@ -55,6 +57,35 @@ void Game::update() {
             player->setMoveDirection(0,-1);
         }
         key_events.pop_front();
+    }
+
+    while(!ui_events.empty()) {
+        UIEvent event = ui_events.front();
+        switch(event.type) {
+            case UsedItem:
+                emit pushToConsole(QString("Used Item : ") + event.item_type);
+                bool did_something = false;
+                if (event.item_type == "Sword") {
+                    for (int i = 0; i < entities.size(); i++) {
+                        if (QRect(player->getPosition() - QPoint(player->getPixmap().size().width(), player->getPixmap().size().height()), player->getPixmap().size() * 3).intersects(entities[i]->getCollisionRectangle())
+                            && entities[i]->type == "wizard") {
+                            if (((Wizard*)entities[i])->is_alive) {
+                                ((Wizard*)entities[i])->is_alive = false;
+                                emit updateScene();
+                                emit pushToConsole("Wizard : Blast! You have defeated me! To take my treasure you will first have to solve the riddle to open my vault!");
+                                emit pushToConsole("Wizard : *dies*");
+                                did_something = true;
+                            }
+                        }
+                    }
+                }
+                if (!did_something){
+                    emit pushToConsole("You accomplished nothing.");
+                }
+            break;
+        }
+
+        ui_events.pop_front();
     }
 
     if (player->getMoveDirection().x() != 0 || player->getMoveDirection().y() != 0) {
@@ -152,7 +183,7 @@ void Game::load_tiles(const QString &tile_map_file_name, const QString &layer_na
 
 void Game::load_entities(const QString &tile_image_name, const QString &tiles, std::vector<Entity *> &entities) {
     std::vector<Sprite*> raw;
-    // Get entites from the entities tile layer
+    // Get entities from the entities tile layer
     load_tiles(tile_image_name, tiles, raw);
 
     while(!raw.empty()) {
@@ -160,6 +191,12 @@ void Game::load_entities(const QString &tile_image_name, const QString &tiles, s
             player = new Player(raw.back()->getPixmap());
             player->setPosition(raw.back()->getPosition());
             entities.push_back(player);
+        } else if (raw.back()->getImageId() == WIZARD_TILE) {
+            Wizard* e = new Wizard(raw.back()->getPixmap());
+            e->setPosition(raw.back()->getPosition());
+            e->setCollisionRectable(QRect(raw.back()->getPosition(), e->getPixmap().size()));
+            e->type = "wizard";
+            entities.push_back(e);
         } else {
             Entity* e = new Entity(raw.back()->getPixmap());
             e->setPosition(raw.back()->getPosition());
@@ -196,7 +233,6 @@ void Game::load_entities(const QString &tile_image_name, const QString &tiles, s
     }
 }
 
-
 void Game::keyPressEvent(QKeyEvent *event) {
     key_events.push_back(event->key());
 }
@@ -208,4 +244,8 @@ Game::~Game() {
 //    for (Sprite* s : tiles) {
 //        delete s;
 //    }
+}
+
+void Game::uiEvent(UIEvent event) {
+    ui_events.push_back(event);
 }

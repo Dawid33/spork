@@ -7,4 +7,8 @@ target_sources(spork PRIVATE
         Entity.cpp
         Entity.hpp
         Player.cpp
-        Player.hpp)
+        Player.hpp
+        UIEvent.cpp
+        UIEvent.hpp
+        Wizard.cpp
+        Wizard.hpp)

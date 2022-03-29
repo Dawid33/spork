@@ -57,11 +57,7 @@ void MainWindow::selectedItem(InventoryItem *item) {
 }
 
 void MainWindow::usedItem(InventoryItem *item) {
-    if (console_dock->widget() != nullptr && item != nullptr) {
-        auto *console = (StatusConsole*)console_dock->widget();
-        QString s = QString("Item : %1").arg(item->getName());
-        console->append_text(s);
-    }
+    game->uiEvent(UIEvent(item->getName()));
 }
 
 void MainWindow::printToConsole(const QString &value) {

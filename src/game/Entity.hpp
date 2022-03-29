@@ -15,6 +15,7 @@ public:
     void setOnEnterString(const QString &value);
 
     bool has_entered = false;
+    QString type = "";
 private:
     QRect collision_rectangle;
     QString on_enter = QString("");

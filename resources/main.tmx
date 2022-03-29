@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="100" height="100" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="13">
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="100" height="100" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="15">
  <editorsettings>
   <export target="main.csv" format="csv"/>
  </editorsettings>
  <tileset firstgid="1" source="spork_tileset.tsx"/>
- <layer id="1" name="background_tiles" width="100" height="100" opacity="0.99">
+ <layer id="1" name="background_tiles" width="100" height="100" locked="1" opacity="0.99">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -212,7 +212,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="4" name="objects" locked="1">
+ <objectgroup id="4" name="objects">
   <object id="4" x="746" y="1138" width="33" height="29">
    <properties>
     <property name="Text" value="You have entered the castle."/>
@@ -255,7 +255,12 @@
   </object>
   <object id="12" x="751" y="1073" width="92" height="69">
    <properties>
-    <property name="Text" value="Wizard : Hello there weary traveller, we may be the only humans left alive on planet earth! Before I let you in, I must first see that you are not an agent of the robot uprising!"/>
+    <property name="Text" value="Wizard : Go away, you IQ is too low."/>
+   </properties>
+  </object>
+  <object id="14" x="862.667" y="1038.5" width="113" height="114">
+   <properties>
+    <property name="Text" value="You see lots of expensive items all over the floor."/>
    </properties>
   </object>
  </objectgroup>

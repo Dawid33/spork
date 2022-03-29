@@ -9,6 +9,7 @@
 #include "Entity.hpp"
 #include "Player.hpp"
 #include "../GameView.hpp"
+#include "UIEvent.hpp"
 
 class Game : public QThread {
     Q_OBJECT
@@ -19,6 +20,7 @@ public:
     ~Game() override;
     void stop();
     void keyPressEvent(QKeyEvent *event);
+    void uiEvent(UIEvent event);
 
 protected:
     void run() override;
@@ -31,6 +33,8 @@ private:
     bool shouldUpdate = false;
 
     std::deque<int> key_events;
+    std::deque<UIEvent> ui_events;
+
     QTimer *game_tick_timer;
     std::vector<Sprite*> tiles;
     std::vector<Entity*> entities;
