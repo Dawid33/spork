@@ -44,6 +44,7 @@ signals:
     void updateScene();
     void moveViewport(int x, int y);
     void pushToConsole(const QString&);
+    void startWordle();
 public slots:
     void setShouldUpdate();
 

@@ -13,6 +13,7 @@ class ControlPanel : public QWidget {
     Q_OBJECT
 public:
     explicit ControlPanel(QWidget* parent);
+    void toggleWordle(bool);
     InventoryButton* useButton();
     InventoryGrid* inventory();
 
@@ -21,20 +22,20 @@ public:
 protected slots:
     void clickedInventoryCell(int row, int column);
     void useButtonPressed(bool);
+    void enteredWordle();
 signals:
     void selectedItem(InventoryItem *item);
     void clickedUseButton(InventoryItem *item);
+    void gotWordle(const QString&);
 protected:
     void paintEvent(QPaintEvent *) override;
     void resizeEvent(QResizeEvent *event) override;
 private:
     InventoryButton *use_btn;
-
     InventoryButton *drop_btn;
-
     InventoryGrid *inventory_grid;
-
     QVector2D original_size;
+    QLineEdit* wordle_box;
 };
 
 

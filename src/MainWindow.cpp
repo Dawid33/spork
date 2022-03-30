@@ -11,6 +11,7 @@
 #include "ui/control_panel/InventoryItem.hpp"
 #include <QTimer>
 #include "Globals.hpp"
+#include <QInputDialog>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     this->resize(baseScreenWidth, baseScreenHeight);
@@ -19,8 +20,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     game = new Game(this);
     game->start();
     game_view = new GameView(game, new GameScene(this));
+    wordle = new Wordle();
 
     connect(game, &Game::pushToConsole, this, &MainWindow::printToConsole);
+    connect(game, &Game::startWordle, this, &MainWindow::startWordle);
 
     QTransform trans;
     trans.scale(2.5,2.5);
@@ -39,12 +42,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
             this, &MainWindow::usedItem);
     connect(((ControlPanel*)control_panel_dock->widget()), &ControlPanel::selectedItem,
             this, &MainWindow::selectedItem);
+    connect((ControlPanel*)control_panel_dock->widget(), &ControlPanel::gotWordle, this, &MainWindow::checkWordle);
 
     setCentralWidget(game_view);
 }
 
 MainWindow::~MainWindow() {
     game->stop();
+    delete wordle;
     delete this->game;
 }
 
@@ -71,29 +76,16 @@ void MainWindow::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
 }
 
-//void MainWindow::createMenuBar() {
-//    auto *menu_bar = new QMenuBar(this);
-//
-//    auto resolutions_menu = new QMenu("Resolutions", this);
-//    resolutions_menu->addAction("Fullscreen", [=]() -> void {
-//        this->showFullScreen();
-//    });
-//    resolutions_menu->addAction("1920x1080", [=]() -> void {
-//        this->resize(1920, 1080);
-//        this->showNormal();
-//    });
-//    resolutions_menu->addAction("1280x720", [=]() -> void {
-//        this->resize(1280, 720);
-//        this->showNormal();
-//    });
-//    resolutions_menu->addAction("640x360", [=]() -> void {
-//        this->resize(640, 360);
-//        this->showNormal();
-//    });
-//    resolutions_menu->addAction("1024x768", [=]() -> void {
-//        this->resize(1024, 768);
-//        this->showNormal();
-//    });
-//    menu_bar->addMenu(resolutions_menu);
-//    setMenuBar(menu_bar);
-//}
+void MainWindow::startWordle() {
+    ((StatusConsole*)console_dock->widget())->clear();
+    this->printToConsole("Wordle : type your guess in to the box on the bottom right hand corner.");
+    this->printToConsole("The word has 5 letters.");
+    ((ControlPanel*)control_panel_dock->widget())->toggleWordle(true);
+}
+
+void MainWindow::checkWordle(const QString &value) {
+    auto editor = ((StatusConsole*)console_dock->widget())->getTextEdit();
+    editor->clear();
+    wordle->guess(value);
+    wordle->print(editor);
+}

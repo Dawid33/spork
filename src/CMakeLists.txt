@@ -6,4 +6,6 @@ target_sources(spork PRIVATE
         MainWindow.cpp
         MainWindow.hpp
         Globals.hpp
-        Main.cpp)
+        Main.cpp
+        Wordle.cpp
+        Wordle.hpp)

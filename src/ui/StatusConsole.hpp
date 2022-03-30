@@ -11,8 +11,8 @@ public:
     QPixmap border;
     QPixmap border_base;
     void append_text(const QString &text);
-public slots:
-    void print_hello();
+    void clear();
+    QTextEdit* getTextEdit();
 protected:
     void paintEvent(QPaintEvent *) override;
     QSize sizeHint() const override;

@@ -12,7 +12,7 @@
 #include "ui/ControlPanelDock.hpp"
 #include "ui/menu_bar/ResolutionsMenu.hpp"
 #include "GameView.hpp"
-
+#include "Wordle.hpp"
 
 class QPushButton;
 class MainWindow : public QMainWindow
@@ -27,14 +27,16 @@ private slots:
     void selectedItem(InventoryItem *item);
     void usedItem(InventoryItem *item);
     void printToConsole(const QString&);
+    void startWordle();
+    void checkWordle(const QString&);
 private:
 
     Game *game;
     GameView *game_view;
+    Wordle* wordle;
 
     GameScene *scene;
     ControlPanelDock *control_panel_dock;
-
     StatusConsoleDock *console_dock;
 };
 

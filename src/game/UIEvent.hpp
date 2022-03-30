@@ -8,7 +8,8 @@
 #include "../ui/control_panel/InventoryItem.hpp"
 
 enum EventType {
-    UsedItem
+    UsedItem,
+    SolvedWordle
 };
 
 class UIEvent {

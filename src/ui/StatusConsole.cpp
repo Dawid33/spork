@@ -3,6 +3,7 @@
 #include <iostream>
 #include <QResizeEvent>
 #include <QScrollBar>
+#include <QInputDialog>
 #include "../Globals.hpp"
 
 StatusConsole::StatusConsole(QWidget *parent) : QWidget(parent) {
@@ -20,7 +21,6 @@ StatusConsole::StatusConsole(QWidget *parent) : QWidget(parent) {
     text_edit->setFontPointSize(10.0);
     text_edit->setText("Welcome to Spork!");
     text_edit->setTextInteractionFlags(Qt::TextBrowserInteraction);
-
 
     original_size = QVector2D(size().width(),size().height());
 }
@@ -58,6 +58,10 @@ void StatusConsole::append_text(const QString &text) {
         text_edit->verticalScrollBar()->setValue(scrollbarPrevValue);
 }
 
-void StatusConsole::print_hello() {
-    append_text("Hello, World!");
+void StatusConsole::clear() {
+    text_edit->clear();
+}
+
+QTextEdit *StatusConsole::getTextEdit() {
+    return text_edit;
 }
