@@ -7,7 +7,7 @@
 - [ ] Unions
 - [ ] Operator overloading
     - Overload `<<` operator for priting debug info.
-- [ ] Abstract classes
+- [X] Abstract classes
     - Is it enought to use them or do we need to create our own
 - [ ] Copy constructors (deep , shallow copy)
 - [ ] Bit structures
@@ -22,7 +22,7 @@
 - [X] Destructors
 - [X] Memory management
 - [X] Header files (inclusion guards)
-- [ ] Arrays and pointers
+- [X] Arrays and pointers
 - [X] Friendship
 - [X] Global variables
 - [X] Private, Public, Protected

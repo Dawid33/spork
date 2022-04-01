@@ -24,7 +24,7 @@ public:
 class Wordle {
 public:
     Wordle();
-    void guess(const QString &);
+    bool guess(const QString &);
     void print(QTextEdit* editor);
 private:
     std::string word_to_solve;

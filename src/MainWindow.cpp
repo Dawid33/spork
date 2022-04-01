@@ -86,6 +86,11 @@ void MainWindow::startWordle() {
 void MainWindow::checkWordle(const QString &value) {
     auto editor = ((StatusConsole*)console_dock->widget())->getTextEdit();
     editor->clear();
-    wordle->guess(value);
-    wordle->print(editor);
+    bool is_correct = wordle->guess(value);
+    if (is_correct) {
+        editor->clear();
+        editor->insertPlainText("You have solved the wordle! Well done!");
+    } else {
+        wordle->print(editor);
+    }
 }
