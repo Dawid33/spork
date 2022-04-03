@@ -20,7 +20,7 @@ ControlPanel::ControlPanel(QWidget *parent) : QWidget(parent) {
     auto font = wordle_box->font();
     font.setPointSize(22);
     wordle_box->setFont(font);
-    //wordle_box->setVisible(false);
+    wordle_box->setVisible(false);
 
     inventory_grid->setItem(0,0,new InventoryItem("Sword", QPixmap("./resources/sword.png")));
 
