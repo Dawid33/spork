@@ -1,0 +1,19 @@
+{
+	"BUILD_DIR" : "/home/dawids/Desktop/spork/cmake-build-debug/spork_autogen",
+	"CMAKE_BINARY_DIR" : "/home/dawids/Desktop/spork/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/dawids/Desktop/spork/cmake-build-debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/dawids/Desktop/spork",
+	"CMAKE_SOURCE_DIR" : "/home/dawids/Desktop/spork",
+	"INCLUDE_DIR" : "/home/dawids/Desktop/spork/cmake-build-debug/spork_autogen/include",
+	"INPUTS" : [],
+	"LOCK_FILE" : "/home/dawids/Desktop/spork/cmake-build-debug/CMakeFiles/spork_autogen.dir/AutoRcc_images_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "images" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_images.cpp",
+	"RCC_EXECUTABLE" : "/nix/store/kkgs8i5rcvnc483rhql3pqi0mgg5n6zx-qtbase-5.15.3-dev/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/dawids/Desktop/spork/cmake-build-debug/CMakeFiles/spork_autogen.dir/AutoRcc_images_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/dawids/Desktop/spork/images.qrc",
+	"VERBOSITY" : 0
+}

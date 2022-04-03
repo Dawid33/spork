@@ -1,0 +1,5 @@
+/nix/store/1i7wb8smn7h6asdpwfbq2ka1nw06q74q-clion-2021.2.3/clion-2021.2.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/dawids/Desktop/spork
+Linking with existing QT5 libraries...
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/dawids/Desktop/spork/cmake-build-debug

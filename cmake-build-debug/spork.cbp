@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="spork"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="clang"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\run\;CMake Files\..\..\..\..\run\current-system\;CMake Files\..\..\..\..\run\current-system\sw\;CMake Files\..\..\..\..\run\current-system\sw\lib\;CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\;CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5\;CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Core\;CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\;CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Widgets\;CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Xml\;CMake Files\src\;CMake Files\src\game\;CMake Files\src\ui\;CMake Files\src\ui\menu_bar\;CMake Files\src\ui\control_panel\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/dawids/Desktop/spork/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/dawids/Desktop/spork/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/dawids/Desktop/spork/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="spork">
+				<Option output="/home/dawids/Desktop/spork/cmake-build-debug/spork" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/dawids/Desktop/spork/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_XML_LIB"/>
+					<Add directory="/home/dawids/Desktop/spork/cmake-build-debug/spork_autogen/include"/>
+					<Add directory="/nix/store/kkgs8i5rcvnc483rhql3pqi0mgg5n6zx-qtbase-5.15.3-dev/include"/>
+					<Add directory="/nix/store/kkgs8i5rcvnc483rhql3pqi0mgg5n6zx-qtbase-5.15.3-dev/include/QtCore"/>
+					<Add directory="/nix/store/kkgs8i5rcvnc483rhql3pqi0mgg5n6zx-qtbase-5.15.3-dev/./mkspecs/linux-g++"/>
+					<Add directory="/nix/store/kkgs8i5rcvnc483rhql3pqi0mgg5n6zx-qtbase-5.15.3-dev/include/QtGui"/>
+					<Add directory="/nix/store/pzfhk4i2kijmvwdlac1mcgmn5g6bv4zc-libglvnd-1.3.4-dev/include"/>
+					<Add directory="/nix/store/kkgs8i5rcvnc483rhql3pqi0mgg5n6zx-qtbase-5.15.3-dev/include/QtWidgets"/>
+					<Add directory="/nix/store/kkgs8i5rcvnc483rhql3pqi0mgg5n6zx-qtbase-5.15.3-dev/include/QtXml"/>
+					<Add directory="/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0"/>
+					<Add directory="/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0/x86_64-unknown-linux-gnu"/>
+					<Add directory="/nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root/include"/>
+					<Add directory="/nix/store/f8z3wraxrbziyf93lwh6adslm89zi6fw-glibc-2.33-123-dev/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 spork"/>
+					<CompileFile command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="spork/fast">
+				<Option output="/home/dawids/Desktop/spork/cmake-build-debug/spork" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/dawids/Desktop/spork/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_XML_LIB"/>
+					<Add directory="/home/dawids/Desktop/spork/cmake-build-debug/spork_autogen/include"/>
+					<Add directory="/nix/store/kkgs8i5rcvnc483rhql3pqi0mgg5n6zx-qtbase-5.15.3-dev/include"/>
+					<Add directory="/nix/store/kkgs8i5rcvnc483rhql3pqi0mgg5n6zx-qtbase-5.15.3-dev/include/QtCore"/>
+					<Add directory="/nix/store/kkgs8i5rcvnc483rhql3pqi0mgg5n6zx-qtbase-5.15.3-dev/./mkspecs/linux-g++"/>
+					<Add directory="/nix/store/kkgs8i5rcvnc483rhql3pqi0mgg5n6zx-qtbase-5.15.3-dev/include/QtGui"/>
+					<Add directory="/nix/store/pzfhk4i2kijmvwdlac1mcgmn5g6bv4zc-libglvnd-1.3.4-dev/include"/>
+					<Add directory="/nix/store/kkgs8i5rcvnc483rhql3pqi0mgg5n6zx-qtbase-5.15.3-dev/include/QtWidgets"/>
+					<Add directory="/nix/store/kkgs8i5rcvnc483rhql3pqi0mgg5n6zx-qtbase-5.15.3-dev/include/QtXml"/>
+					<Add directory="/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0"/>
+					<Add directory="/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0/x86_64-unknown-linux-gnu"/>
+					<Add directory="/nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root/include"/>
+					<Add directory="/nix/store/f8z3wraxrbziyf93lwh6adslm89zi6fw-glibc-2.33-123-dev/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 spork/fast"/>
+					<CompileFile command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="spork_autogen">
+				<Option working_dir="/home/dawids/Desktop/spork/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 spork_autogen"/>
+					<CompileFile command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/run/current-system/sw/bin/make -j12 -f &quot;/home/dawids/Desktop/spork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/dawids/Desktop/spork/cmake-build-debug/spork_autogen/EWIEGA46WW/qrc_images.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/cmake-build-debug/spork_autogen/EWIEGA46WW/qrc_images.cpp.rule">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/cmake-build-debug/spork_autogen/mocs_compilation.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/images.qrc">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/GameScene.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/GameScene.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/GameView.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/GameView.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/Globals.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/Main.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/MainWindow.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/MainWindow.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/Wordle.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/Wordle.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/game/Entity.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/game/Entity.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/game/Game.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/game/Game.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/game/Player.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/game/Player.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/game/Sprite.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/game/Sprite.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/game/UIEvent.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/game/UIEvent.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/game/Wizard.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/game/Wizard.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/ControlPanelDock.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/ControlPanelDock.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/DockTitleBar.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/DockTitleBar.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/StatusConsole.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/StatusConsole.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/StatusConsoleDock.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/StatusConsoleDock.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/control_panel/ControlPanel.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/control_panel/ControlPanel.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/control_panel/DrawInventoryItem.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/control_panel/DrawInventoryItem.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/control_panel/InventoryButton.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/control_panel/InventoryButton.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/control_panel/InventoryGrid.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/control_panel/InventoryGrid.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/control_panel/InventoryItem.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/control_panel/InventoryItem.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/menu_bar/ResolutionsMenu.cpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/menu_bar/ResolutionsMenu.hpp">
+			<Option target="spork"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/images.qrc">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5/Qt5Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5/Qt5ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5/Qt5ModuleLocation.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QGtk3ThemePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QPdfPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QWaylandEglPlatformIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QWaylandIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QWaylandXCompositeEglPlatformIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QWaylandXCompositeGlxPlatformIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Xml/Qt5XmlConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Xml\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/../../../../run/current-system/sw/lib/cmake/Qt5Xml/Qt5XmlConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\run\current-system\sw\lib\cmake\Qt5Xml\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/game/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\game\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\ui\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/menu_bar/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\ui\menu_bar\"/>
+		</Unit>
+		<Unit filename="/home/dawids/Desktop/spork/src/ui/control_panel/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\ui\control_panel\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

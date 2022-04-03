@@ -1,0 +1,301 @@
+The system is: Linux - 5.17.0 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /run/current-system/sw/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is Clang, found in "/home/dawids/Desktop/spork/cmake-build-debug/CMakeFiles/3.21.2/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /run/current-system/sw/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is Clang, found in "/home/dawids/Desktop/spork/cmake-build-debug/CMakeFiles/3.21.2/CompilerIdCXX/a.out"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/dawids/Desktop/spork/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/run/current-system/sw/bin/make -f Makefile cmTC_35634/fast && /run/current-system/sw/bin/make  -f CMakeFiles/cmTC_35634.dir/build.make CMakeFiles/cmTC_35634.dir/build
+make[1]: Entering directory '/home/dawids/Projects/c++/spork/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.o
+/run/current-system/sw/bin/cc   -v -MD -MT CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.o -c /nix/store/ww83f028vh23vrvfg0i23y9cgkx89x53-cmake-3.21.2/share/cmake-3.21/Modules/CMakeCCompilerABI.c
+clang version 7.1.0 (tags/RELEASE_710/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /nix/store/540vv50xh2s9p6n8mcwnzjvxw9qb1j1n-clang-7.1.0/bin
+Found candidate GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0
+Found candidate GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0
+Selected GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/nix/store/540vv50xh2s9p6n8mcwnzjvxw9qb1j1n-clang-7.1.0/bin/clang-7" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mthread-model posix -mdisable-fp-elim -fmath-errno -masm-verbose -mconstructor-aliases -munwind-tables -fuse-init-array -target-cpu x86-64 -dwarf-column-info -debugger-tuning=gdb -v -coverage-notes-file /home/dawids/Projects/c++/spork/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.gcno -nostdsysteminc -resource-dir /nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root -dependency-file CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.o.d -sys-header-deps -MT CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.o -idirafter /nix/store/f8z3wraxrbziyf93lwh6adslm89zi6fw-glibc-2.33-123-dev/include -internal-isystem /nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root/include -fdebug-compilation-dir /home/dawids/Projects/c++/spork/cmake-build-debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fobjc-runtime=gcc -fdiagnostics-show-option -o CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.o -x c /nix/store/ww83f028vh23vrvfg0i23y9cgkx89x53-cmake-3.21.2/share/cmake-3.21/Modules/CMakeCCompilerABI.c -faddrsig
+clang -cc1 version 7.1.0 based upon LLVM 7.1.0 default target x86_64-unknown-linux-gnu
+#include "..." search starts here:
+#include <...> search starts here:
+ /nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root/include
+ /nix/store/f8z3wraxrbziyf93lwh6adslm89zi6fw-glibc-2.33-123-dev/include
+End of search list.
+Linking C executable cmTC_35634
+/nix/store/ww83f028vh23vrvfg0i23y9cgkx89x53-cmake-3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_35634.dir/link.txt --verbose=1
+/run/current-system/sw/bin/cc  -v CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.o -o cmTC_35634 
+clang version 7.1.0 (tags/RELEASE_710/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /nix/store/540vv50xh2s9p6n8mcwnzjvxw9qb1j1n-clang-7.1.0/bin
+Found candidate GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0
+Found candidate GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0
+Selected GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/bin/ld" --eh-frame-hdr -m elf_x86_64 -o cmTC_35634 /nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crt1.o /nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crti.o /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtbegin.o -L/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib -L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0 -L/nix/store/lbccj93nnf77zxg3m9gmral5avbp64z2-gcc-10.3.0-lib/x86_64-unknown-linux-gnu/lib -L/nix/store/9lx5kkqi5x607r8kjjlkg7cd21n1p5ws-clang-7.1.0-lib/lib -L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0 -L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../../../lib64 -L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../.. -dynamic-linker=/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/ld-linux-x86-64.so.2 CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtend.o /nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crtn.o
+make[1]: Leaving directory '/home/dawids/Projects/c++/spork/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root/include]
+    add: [/nix/store/f8z3wraxrbziyf93lwh6adslm89zi6fw-glibc-2.33-123-dev/include]
+  end of search list found
+  collapse include dir [/nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root/include] ==> [/nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root/include]
+  collapse include dir [/nix/store/f8z3wraxrbziyf93lwh6adslm89zi6fw-glibc-2.33-123-dev/include] ==> [/nix/store/f8z3wraxrbziyf93lwh6adslm89zi6fw-glibc-2.33-123-dev/include]
+  implicit include dirs: [/nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root/include;/nix/store/f8z3wraxrbziyf93lwh6adslm89zi6fw-glibc-2.33-123-dev/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/dawids/Desktop/spork/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/run/current-system/sw/bin/make -f Makefile cmTC_35634/fast && /run/current-system/sw/bin/make  -f CMakeFiles/cmTC_35634.dir/build.make CMakeFiles/cmTC_35634.dir/build]
+  ignore line: [make[1]: Entering directory '/home/dawids/Projects/c++/spork/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/run/current-system/sw/bin/cc   -v -MD -MT CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.o -c /nix/store/ww83f028vh23vrvfg0i23y9cgkx89x53-cmake-3.21.2/share/cmake-3.21/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang version 7.1.0 (tags/RELEASE_710/final)]
+  ignore line: [Target: x86_64-unknown-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /nix/store/540vv50xh2s9p6n8mcwnzjvxw9qb1j1n-clang-7.1.0/bin]
+  ignore line: [Found candidate GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0]
+  ignore line: [Found candidate GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0]
+  ignore line: [Selected GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  ignore line: [ "/nix/store/540vv50xh2s9p6n8mcwnzjvxw9qb1j1n-clang-7.1.0/bin/clang-7" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mthread-model posix -mdisable-fp-elim -fmath-errno -masm-verbose -mconstructor-aliases -munwind-tables -fuse-init-array -target-cpu x86-64 -dwarf-column-info -debugger-tuning=gdb -v -coverage-notes-file /home/dawids/Projects/c++/spork/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.gcno -nostdsysteminc -resource-dir /nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root -dependency-file CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.o.d -sys-header-deps -MT CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.o -idirafter /nix/store/f8z3wraxrbziyf93lwh6adslm89zi6fw-glibc-2.33-123-dev/include -internal-isystem /nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root/include -fdebug-compilation-dir /home/dawids/Projects/c++/spork/cmake-build-debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fobjc-runtime=gcc -fdiagnostics-show-option -o CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.o -x c /nix/store/ww83f028vh23vrvfg0i23y9cgkx89x53-cmake-3.21.2/share/cmake-3.21/Modules/CMakeCCompilerABI.c -faddrsig]
+  ignore line: [clang -cc1 version 7.1.0 based upon LLVM 7.1.0 default target x86_64-unknown-linux-gnu]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root/include]
+  ignore line: [ /nix/store/f8z3wraxrbziyf93lwh6adslm89zi6fw-glibc-2.33-123-dev/include]
+  ignore line: [End of search list.]
+  ignore line: [Linking C executable cmTC_35634]
+  ignore line: [/nix/store/ww83f028vh23vrvfg0i23y9cgkx89x53-cmake-3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_35634.dir/link.txt --verbose=1]
+  ignore line: [/run/current-system/sw/bin/cc  -v CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.o -o cmTC_35634 ]
+  ignore line: [clang version 7.1.0 (tags/RELEASE_710/final)]
+  ignore line: [Target: x86_64-unknown-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /nix/store/540vv50xh2s9p6n8mcwnzjvxw9qb1j1n-clang-7.1.0/bin]
+  ignore line: [Found candidate GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0]
+  ignore line: [Found candidate GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0]
+  ignore line: [Selected GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  link line: [ "/nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/bin/ld" --eh-frame-hdr -m elf_x86_64 -o cmTC_35634 /nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crt1.o /nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crti.o /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtbegin.o -L/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib -L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0 -L/nix/store/lbccj93nnf77zxg3m9gmral5avbp64z2-gcc-10.3.0-lib/x86_64-unknown-linux-gnu/lib -L/nix/store/9lx5kkqi5x607r8kjjlkg7cd21n1p5ws-clang-7.1.0-lib/lib -L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0 -L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../../../lib64 -L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../.. -dynamic-linker=/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/ld-linux-x86-64.so.2 CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtend.o /nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crtn.o]
+    arg [/nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/bin/ld] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_35634] ==> ignore
+    arg [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crt1.o] ==> obj [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crt1.o]
+    arg [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crti.o] ==> obj [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crti.o]
+    arg [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtbegin.o] ==> obj [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtbegin.o]
+    arg [-L/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib] ==> dir [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib]
+    arg [-L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0] ==> dir [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0]
+    arg [-L/nix/store/lbccj93nnf77zxg3m9gmral5avbp64z2-gcc-10.3.0-lib/x86_64-unknown-linux-gnu/lib] ==> dir [/nix/store/lbccj93nnf77zxg3m9gmral5avbp64z2-gcc-10.3.0-lib/x86_64-unknown-linux-gnu/lib]
+    arg [-L/nix/store/9lx5kkqi5x607r8kjjlkg7cd21n1p5ws-clang-7.1.0-lib/lib] ==> dir [/nix/store/9lx5kkqi5x607r8kjjlkg7cd21n1p5ws-clang-7.1.0-lib/lib]
+    arg [-L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0] ==> dir [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0]
+    arg [-L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../../../lib64] ==> dir [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../../../lib64]
+    arg [-L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../..] ==> dir [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../..]
+    arg [-dynamic-linker=/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/ld-linux-x86-64.so.2] ==> ignore
+    arg [CMakeFiles/cmTC_35634.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtend.o] ==> obj [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtend.o]
+    arg [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crtn.o] ==> obj [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crtn.o]
+  collapse library dir [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib] ==> [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib]
+  collapse library dir [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0] ==> [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0]
+  collapse library dir [/nix/store/lbccj93nnf77zxg3m9gmral5avbp64z2-gcc-10.3.0-lib/x86_64-unknown-linux-gnu/lib] ==> [/nix/store/lbccj93nnf77zxg3m9gmral5avbp64z2-gcc-10.3.0-lib/x86_64-unknown-linux-gnu/lib]
+  collapse library dir [/nix/store/9lx5kkqi5x607r8kjjlkg7cd21n1p5ws-clang-7.1.0-lib/lib] ==> [/nix/store/9lx5kkqi5x607r8kjjlkg7cd21n1p5ws-clang-7.1.0-lib/lib]
+  collapse library dir [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0] ==> [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0]
+  collapse library dir [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../../../lib64] ==> [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64]
+  collapse library dir [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../..] ==> [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit objs: [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crt1.o;/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crti.o;/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtbegin.o;/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtend.o;/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crtn.o]
+  implicit dirs: [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib;/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0;/nix/store/lbccj93nnf77zxg3m9gmral5avbp64z2-gcc-10.3.0-lib/x86_64-unknown-linux-gnu/lib;/nix/store/9lx5kkqi5x607r8kjjlkg7cd21n1p5ws-clang-7.1.0-lib/lib;/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0;/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64]
+  implicit fwks: []
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/dawids/Desktop/spork/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/run/current-system/sw/bin/make -f Makefile cmTC_547fa/fast && /run/current-system/sw/bin/make  -f CMakeFiles/cmTC_547fa.dir/build.make CMakeFiles/cmTC_547fa.dir/build
+make[1]: Entering directory '/home/dawids/Projects/c++/spork/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.o
+/run/current-system/sw/bin/c++   -v -MD -MT CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.o -c /nix/store/ww83f028vh23vrvfg0i23y9cgkx89x53-cmake-3.21.2/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp
+clang version 7.1.0 (tags/RELEASE_710/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /nix/store/540vv50xh2s9p6n8mcwnzjvxw9qb1j1n-clang-7.1.0/bin
+Found candidate GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0
+Found candidate GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0
+Selected GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/nix/store/540vv50xh2s9p6n8mcwnzjvxw9qb1j1n-clang-7.1.0/bin/clang-7" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mthread-model posix -mdisable-fp-elim -fmath-errno -masm-verbose -mconstructor-aliases -munwind-tables -fuse-init-array -target-cpu x86-64 -dwarf-column-info -debugger-tuning=gdb -v -coverage-notes-file /home/dawids/Projects/c++/spork/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.gcno -nostdsysteminc -resource-dir /nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root -dependency-file CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.o.d -sys-header-deps -MT CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.o -idirafter /nix/store/f8z3wraxrbziyf93lwh6adslm89zi6fw-glibc-2.33-123-dev/include -isystem /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0 -isystem /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0/x86_64-unknown-linux-gnu -internal-isystem /nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root/include -fdeprecated-macro -fdebug-compilation-dir /home/dawids/Projects/c++/spork/cmake-build-debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fobjc-runtime=gcc -fcxx-exceptions -fexceptions -fdiagnostics-show-option -o CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.o -x c++ /nix/store/ww83f028vh23vrvfg0i23y9cgkx89x53-cmake-3.21.2/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp -faddrsig
+clang -cc1 version 7.1.0 based upon LLVM 7.1.0 default target x86_64-unknown-linux-gnu
+#include "..." search starts here:
+#include <...> search starts here:
+ /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0
+ /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0/x86_64-unknown-linux-gnu
+ /nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root/include
+ /nix/store/f8z3wraxrbziyf93lwh6adslm89zi6fw-glibc-2.33-123-dev/include
+End of search list.
+Linking CXX executable cmTC_547fa
+/nix/store/ww83f028vh23vrvfg0i23y9cgkx89x53-cmake-3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_547fa.dir/link.txt --verbose=1
+/run/current-system/sw/bin/c++  -v CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_547fa 
+clang version 7.1.0 (tags/RELEASE_710/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /nix/store/540vv50xh2s9p6n8mcwnzjvxw9qb1j1n-clang-7.1.0/bin
+Found candidate GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0
+Found candidate GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0
+Selected GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/bin/ld" --eh-frame-hdr -m elf_x86_64 -o cmTC_547fa /nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crt1.o /nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crti.o /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtbegin.o -L/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib -L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0 -L/nix/store/lbccj93nnf77zxg3m9gmral5avbp64z2-gcc-10.3.0-lib/x86_64-unknown-linux-gnu/lib -L/nix/store/9lx5kkqi5x607r8kjjlkg7cd21n1p5ws-clang-7.1.0-lib/lib -L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0 -L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../../../lib64 -L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../.. -dynamic-linker=/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/ld-linux-x86-64.so.2 CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtend.o /nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crtn.o
+make[1]: Leaving directory '/home/dawids/Projects/c++/spork/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0]
+    add: [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0/x86_64-unknown-linux-gnu]
+    add: [/nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root/include]
+    add: [/nix/store/f8z3wraxrbziyf93lwh6adslm89zi6fw-glibc-2.33-123-dev/include]
+  end of search list found
+  collapse include dir [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0] ==> [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0]
+  collapse include dir [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0/x86_64-unknown-linux-gnu] ==> [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0/x86_64-unknown-linux-gnu]
+  collapse include dir [/nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root/include] ==> [/nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root/include]
+  collapse include dir [/nix/store/f8z3wraxrbziyf93lwh6adslm89zi6fw-glibc-2.33-123-dev/include] ==> [/nix/store/f8z3wraxrbziyf93lwh6adslm89zi6fw-glibc-2.33-123-dev/include]
+  implicit include dirs: [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0;/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0/x86_64-unknown-linux-gnu;/nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root/include;/nix/store/f8z3wraxrbziyf93lwh6adslm89zi6fw-glibc-2.33-123-dev/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/dawids/Desktop/spork/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/run/current-system/sw/bin/make -f Makefile cmTC_547fa/fast && /run/current-system/sw/bin/make  -f CMakeFiles/cmTC_547fa.dir/build.make CMakeFiles/cmTC_547fa.dir/build]
+  ignore line: [make[1]: Entering directory '/home/dawids/Projects/c++/spork/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/run/current-system/sw/bin/c++   -v -MD -MT CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.o -c /nix/store/ww83f028vh23vrvfg0i23y9cgkx89x53-cmake-3.21.2/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [clang version 7.1.0 (tags/RELEASE_710/final)]
+  ignore line: [Target: x86_64-unknown-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /nix/store/540vv50xh2s9p6n8mcwnzjvxw9qb1j1n-clang-7.1.0/bin]
+  ignore line: [Found candidate GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0]
+  ignore line: [Found candidate GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0]
+  ignore line: [Selected GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  ignore line: [ "/nix/store/540vv50xh2s9p6n8mcwnzjvxw9qb1j1n-clang-7.1.0/bin/clang-7" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mthread-model posix -mdisable-fp-elim -fmath-errno -masm-verbose -mconstructor-aliases -munwind-tables -fuse-init-array -target-cpu x86-64 -dwarf-column-info -debugger-tuning=gdb -v -coverage-notes-file /home/dawids/Projects/c++/spork/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.gcno -nostdsysteminc -resource-dir /nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root -dependency-file CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.o.d -sys-header-deps -MT CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.o -idirafter /nix/store/f8z3wraxrbziyf93lwh6adslm89zi6fw-glibc-2.33-123-dev/include -isystem /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0 -isystem /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0/x86_64-unknown-linux-gnu -internal-isystem /nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root/include -fdeprecated-macro -fdebug-compilation-dir /home/dawids/Projects/c++/spork/cmake-build-debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fobjc-runtime=gcc -fcxx-exceptions -fexceptions -fdiagnostics-show-option -o CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.o -x c++ /nix/store/ww83f028vh23vrvfg0i23y9cgkx89x53-cmake-3.21.2/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp -faddrsig]
+  ignore line: [clang -cc1 version 7.1.0 based upon LLVM 7.1.0 default target x86_64-unknown-linux-gnu]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0]
+  ignore line: [ /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/include/c++/10.3.0/x86_64-unknown-linux-gnu]
+  ignore line: [ /nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/resource-root/include]
+  ignore line: [ /nix/store/f8z3wraxrbziyf93lwh6adslm89zi6fw-glibc-2.33-123-dev/include]
+  ignore line: [End of search list.]
+  ignore line: [Linking CXX executable cmTC_547fa]
+  ignore line: [/nix/store/ww83f028vh23vrvfg0i23y9cgkx89x53-cmake-3.21.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_547fa.dir/link.txt --verbose=1]
+  ignore line: [/run/current-system/sw/bin/c++  -v CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_547fa ]
+  ignore line: [clang version 7.1.0 (tags/RELEASE_710/final)]
+  ignore line: [Target: x86_64-unknown-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /nix/store/540vv50xh2s9p6n8mcwnzjvxw9qb1j1n-clang-7.1.0/bin]
+  ignore line: [Found candidate GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0]
+  ignore line: [Found candidate GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0]
+  ignore line: [Selected GCC installation: /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  link line: [ "/nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/bin/ld" --eh-frame-hdr -m elf_x86_64 -o cmTC_547fa /nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crt1.o /nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crti.o /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtbegin.o -L/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib -L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0 -L/nix/store/lbccj93nnf77zxg3m9gmral5avbp64z2-gcc-10.3.0-lib/x86_64-unknown-linux-gnu/lib -L/nix/store/9lx5kkqi5x607r8kjjlkg7cd21n1p5ws-clang-7.1.0-lib/lib -L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0 -L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../../../lib64 -L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../.. -dynamic-linker=/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/ld-linux-x86-64.so.2 CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtend.o /nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crtn.o]
+    arg [/nix/store/j61rqvil9vjzmcckpabmfzn53brkln57-clang-wrapper-7.1.0/bin/ld] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_547fa] ==> ignore
+    arg [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crt1.o] ==> obj [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crt1.o]
+    arg [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crti.o] ==> obj [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crti.o]
+    arg [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtbegin.o] ==> obj [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtbegin.o]
+    arg [-L/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib] ==> dir [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib]
+    arg [-L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0] ==> dir [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0]
+    arg [-L/nix/store/lbccj93nnf77zxg3m9gmral5avbp64z2-gcc-10.3.0-lib/x86_64-unknown-linux-gnu/lib] ==> dir [/nix/store/lbccj93nnf77zxg3m9gmral5avbp64z2-gcc-10.3.0-lib/x86_64-unknown-linux-gnu/lib]
+    arg [-L/nix/store/9lx5kkqi5x607r8kjjlkg7cd21n1p5ws-clang-7.1.0-lib/lib] ==> dir [/nix/store/9lx5kkqi5x607r8kjjlkg7cd21n1p5ws-clang-7.1.0-lib/lib]
+    arg [-L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0] ==> dir [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0]
+    arg [-L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../../../lib64] ==> dir [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../../../lib64]
+    arg [-L/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../..] ==> dir [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../..]
+    arg [-dynamic-linker=/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/ld-linux-x86-64.so.2] ==> ignore
+    arg [CMakeFiles/cmTC_547fa.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtend.o] ==> obj [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtend.o]
+    arg [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crtn.o] ==> obj [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crtn.o]
+  collapse library dir [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib] ==> [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib]
+  collapse library dir [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0] ==> [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0]
+  collapse library dir [/nix/store/lbccj93nnf77zxg3m9gmral5avbp64z2-gcc-10.3.0-lib/x86_64-unknown-linux-gnu/lib] ==> [/nix/store/lbccj93nnf77zxg3m9gmral5avbp64z2-gcc-10.3.0-lib/x86_64-unknown-linux-gnu/lib]
+  collapse library dir [/nix/store/9lx5kkqi5x607r8kjjlkg7cd21n1p5ws-clang-7.1.0-lib/lib] ==> [/nix/store/9lx5kkqi5x607r8kjjlkg7cd21n1p5ws-clang-7.1.0-lib/lib]
+  collapse library dir [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0] ==> [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0]
+  collapse library dir [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../../../lib64] ==> [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64]
+  collapse library dir [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0/../../..] ==> [/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit objs: [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crt1.o;/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crti.o;/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtbegin.o;/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/crtend.o;/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib/crtn.o]
+  implicit dirs: [/nix/store/rir9pf0kz1mb84x5bd3yr0fx415yy423-glibc-2.33-123/lib;/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0;/nix/store/lbccj93nnf77zxg3m9gmral5avbp64z2-gcc-10.3.0-lib/x86_64-unknown-linux-gnu/lib;/nix/store/9lx5kkqi5x607r8kjjlkg7cd21n1p5ws-clang-7.1.0-lib/lib;/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64/gcc/x86_64-unknown-linux-gnu/10.3.0;/nix/store/04m8psaiac9b24qcb6fpwd33lxjgi4py-gcc-10.3.0/lib64]
+  implicit fwks: []
+
+

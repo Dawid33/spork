@@ -4,9 +4,6 @@
 #include <QTextEdit>
 #include <QOpenGLWidget>
 #include <QOpenGLTexture>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
 #include <QFrame>
 #include <QGraphicsScene>
 #include "game/Sprite.hpp"

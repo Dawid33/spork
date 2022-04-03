@@ -14,8 +14,12 @@ set(DEPS ${PROJECT_BINARY_DIR}/deps)
 
 file(COPY ${CMAKE_SOURCE_DIR}/resources DESTINATION ${CMAKE_BINARY_DIR})
 
-find_package(PkgConfig REQUIRED)
-pkg_search_module(GLM REQUIRED glm)
+IF (WIN32)
+    set(CMAKE_PREFIX_PATH "C:\\Qt5\\5.15.2\\msvc2019_64\\lib\\cmake")
+ELSE()
+    find_package(PkgConfig REQUIRED)
+ENDIF()
+
 find_package(Qt5 COMPONENTS
         Core
         Gui
@@ -29,25 +33,12 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/src/ui)
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/ui/menu_bar)
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/ui/control_panel)
 
-target_include_directories(spork PRIVATE ${GLM_INCLUDE_DIRS})
+target_include_directories(spork PRIVATE)
 
-#IF(Qt5_FOUND)
-    message("Linking with existing QT5 libraries...")
-    target_link_libraries(spork
-            Qt5::Core
-            Qt5::Gui
-            Qt5::Widgets
-            Qt5::Xml
-            ${GLM_LIBRARY_DIRS})
-#ELSE()
-#    message("QT5 not found, building from source")
-#    ExternalProject_Add(qt5_build
-#            GIT_REPOSITORY  "https://github.com/qt/qt5"
-#            GIT_TAG         v6.2.3
-#            CONFIGURE_COMMAND "${PROJECT_BINARY_DIR}/qt5_build-prefix/src/qt5_build/configure" "--prefix=$PWD/qtbase")
-#    add_dependencies(spork qt5_build)
-#    # add_library(qt5 SHARED IMPORTED)
-#    # set_property(TARGET qt5 PROPERTY IMPORTED_LOCATION ${DEPS)
-#ENDIF()
-
+message("Linking with existing QT5 libraries...")
+target_link_libraries(spork
+        Qt5::Core
+        Qt5::Gui
+        Qt5::Widgets
+        Qt5::Xml)
 
