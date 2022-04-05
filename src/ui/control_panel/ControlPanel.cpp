@@ -2,10 +2,10 @@
 #include <iostream>
 #include <QResizeEvent>
 #include <valarray>
-#include "ControlPanel.hpp"
-#include "InventoryItem.hpp"
 #include <QDebug>
 #include <QLineEdit>
+#include "ControlPanel.hpp"
+#include "InventoryItem.hpp"
 
 ControlPanel::ControlPanel(QWidget *parent) : QWidget(parent) {
     border_base = QPixmap("./resources/right.png");

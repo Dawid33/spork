@@ -14,7 +14,7 @@
 #include <QInputDialog>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
-    this->resize(baseScreenWidth, baseScreenHeight);
+    this->resize(Global::baseScreenWidth, Global::baseScreenHeight);
     setStyleSheet("QMainWindow {background : lightblue;}");
 
     game = new Game(this);
@@ -92,5 +92,6 @@ void MainWindow::checkWordle(const QString &value) {
         editor->insertPlainText("You have solved the wordle! Well done!");
     } else {
         wordle->print(editor);
+        std::cout << *wordle << std::endl;
     }
 }

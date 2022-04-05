@@ -113,3 +113,22 @@ void Wordle::print(QTextEdit *editor) {
         cursor.insertText("\n");
     }
 }
+
+std::ostream& operator<<(std::ostream &os, const Wordle &w) {
+    QString output;
+
+    for(int i = 0; i < 25; i++) {
+        output += QString((char)(97+i)) + " ";
+    }
+    output += "\n\n";
+
+    output += "Guesses thus far : " + QString::number(w.guesses.size()) + "\n";
+
+    for(int i = 0; i < w.guesses.size(); i++) {
+        for(int j = 0; j < w.guesses[i].length(); j++) {
+            output += w.guesses[i].at(j);
+        }
+    }
+    os << output.toStdString();
+    return os;
+}

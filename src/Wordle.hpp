@@ -26,6 +26,7 @@ public:
     Wordle();
     bool guess(const QString &);
     void print(QTextEdit* editor);
+    friend std::ostream& operator<<(std::ostream& os, const Wordle& w);
 private:
     std::string word_to_solve;
     std::vector<LetterState> word_state;

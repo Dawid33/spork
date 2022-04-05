@@ -5,7 +5,10 @@
 #ifndef SPORK_GLOBALS_HPP
 #define SPORK_GLOBALS_HPP
 
-extern int baseScreenWidth;
-extern int baseScreenHeight;
+namespace Global {
+    extern int baseScreenWidth;
+    extern int baseScreenHeight;
+}
+
 
 #endif //SPORK_GLOBALS_HPP

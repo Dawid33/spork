@@ -11,6 +11,14 @@
 #define WIZARD_TILE 197
 #define CHEST_TILE 84
 
+class LoadFileException: public std::exception
+{
+public:
+    virtual const char* what() const throw() {
+        return "Cannot load file";
+    }
+};
+
 Game::Game(QWidget *parent) : QThread(parent) {
     game_tick_timer = new QTimer();
     game_tick_timer->setInterval(20);
@@ -62,7 +70,7 @@ void Game::update() {
 
     while(!ui_events.empty()) {
         UIEvent event = ui_events.front();
-        if (event.type == UsedItem) {
+        if (event.type.UsedItem == 1) {
             emit pushToConsole(QString("Used Item : ") + event.item_type);
             bool did_something = false;
             if (event.item_type == "Sword") {
@@ -100,7 +108,6 @@ void Game::update() {
                     QString s = e->getOnEnterString();
                     emit pushToConsole(s);
                 }
-
             }
         }
 
@@ -113,16 +120,16 @@ void Game::setShouldUpdate() {
     shouldUpdate = true;
 }
 
-QDomDocument load_document(const QString &filepath) {
+QDomDocument load_document(const QString &filepath) throw(LoadFileException) {
     QDomDocument doc("main");
     QFile file(filepath);
     if (!file.open(QIODevice::ReadOnly)) {
-        qDebug() << file.errorString();
+        throw LoadFileException();
     }
     if (!doc.setContent(&file)) {
         qDebug() << "Cannot set content of QDomDocument";
         file.close();
-        return doc;
+        throw std::exception();
     }
     file.close();
     return doc;
@@ -141,7 +148,13 @@ void Game::load_tiles(const QString &tile_map_file_name, const QString &layer_na
         }
     }
 
-    auto doc = load_document("resources/main.tmx");
+    QDomDocument doc;
+    try {
+        doc = load_document("resources/main.tmx");
+    } catch (LoadFileException &e) {
+        qDebug() << e.what();
+        return;
+    }
 
     QStringList csv_data;
     auto layers = doc.elementsByTagName("layer");

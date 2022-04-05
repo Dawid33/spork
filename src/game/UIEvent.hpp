@@ -7,14 +7,16 @@
 
 #include "../ui/control_panel/InventoryItem.hpp"
 
-enum EventType {
-    UsedItem,
-    SolvedWordle
+struct EventType {
+    unsigned short UsedItem :1;
+    unsigned short SolvedWordle :1;
 };
 
 class UIEvent {
 public:
-    UIEvent(QString item_type);
+    UIEvent(const UIEvent &value);
+    UIEvent(const QString &value);
+
     EventType type;
     QString item_type;
 };
