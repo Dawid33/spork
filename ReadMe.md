@@ -1,5 +1,8 @@
 Github : https://github.com/Dawid33/spork
 
+Executable file is in the bin folder.
+I had to submit this as a zip file as my project exceeds the 20 file limit.
+
 Checklist of features :
 
 - [ ] Unions
